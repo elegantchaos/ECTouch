@@ -120,17 +120,14 @@
     return result;
 }
 
-
-- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSArray*)sort
+- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSArray*)sort;
 {
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
-	if (sort)
-	{
-		[request setSortDescriptors:sort];
-	}
+    [request setPredicate:predicate];
+	[request setSortDescriptors:sort];
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
     [request release];
 	
@@ -144,6 +141,11 @@
     }
     
     return result;
+}
+
+- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSArray*)sort
+{
+	return [self allEntitiesForName:entityName predicate:nil sort:sort];
 }
 
 - (void)save
