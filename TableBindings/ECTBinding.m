@@ -51,20 +51,6 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return [controller autorelease];
 }
 
-+ (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties
-{
-    NSMutableArray* controllers = [NSMutableArray arrayWithCapacity:[objects count]];
-    for (id object in objects)
-    {
-        ECTBinding* item = [[ECTBinding alloc] initWithObject:object];
-        [item setValuesForKeysWithDictionary:properties];
-        [controllers addObject:item];
-        [item release];
-    }
-    
-    return controllers;
-}
-
 - (id)initWithObject:(id)objectIn
 {
     if ((self = [super init]) != nil) 

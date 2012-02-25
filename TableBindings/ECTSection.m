@@ -175,13 +175,42 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 #pragma mark - ECTSectionController methods
 
+- (NSArray*)bindingsForObjects:(NSArray*)objects
+{
+    NSMutableArray* controllers = [NSMutableArray arrayWithCapacity:[objects count]];
+	NSDictionary* everyRow = self.everyRowProperties;
+	NSArray* individualRows = self.individualRowProperties;
+	NSUInteger individualCount = [individualRows count];
+	NSUInteger index = 0;
+	
+    for (id object in objects)
+    {
+		NSDictionary* properties = everyRow;
+		if (index < individualCount)
+		{
+			NSMutableDictionary* merged = [NSMutableDictionary dictionaryWithDictionary:properties];
+			[merged addEntriesFromDictionary:[individualRowProperties objectAtIndex:index]];
+			properties = merged;
+		}
+		
+        ECTBinding* item = [[ECTBinding alloc] initWithObject:object];
+        [item setValuesForKeysWithDictionary:properties];
+        [controllers addObject:item];
+        [item release];
+		
+		++index;
+    }
+    
+    return controllers;
+}
+
 - (void)bindArrayAtPath:(NSString *)path object:(id)object
 {
     [self cleanupObservers];
     self.source = object;
     self.sourcePath = path;
     NSArray* array = [object valueForKeyPath:path];
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.everyRowProperties]];
+    self.content = [NSMutableArray arrayWithArray:[self bindingsForObjects:array]];
     [object addObserver:self forKeyPath:path options:NSKeyValueObservingOptionNew context:nil];
 }
 
@@ -190,13 +219,13 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     [self cleanupObservers];
     self.source = array;
     self.sourcePath = nil;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.everyRowProperties]];
+    self.content = [NSMutableArray arrayWithArray:[self bindingsForObjects:array]];
 }
 
 - (void)sourceChanged
 {
     NSMutableArray* array = [self mutableSource];
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.everyRowProperties]];
+    self.content = [NSMutableArray arrayWithArray:[self bindingsForObjects:array]];
     [self reloadData];
 }
 

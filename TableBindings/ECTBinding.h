@@ -31,7 +31,6 @@
 @property (nonatomic, retain, readonly) NSString* label;
 @property (nonatomic, retain, readonly) NSString* detail;
 
-+ (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties;
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
 
 - (id)initWithObject:(id)object;
