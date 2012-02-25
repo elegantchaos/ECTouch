@@ -69,7 +69,10 @@
 
 	NSError *error = nil;
     NSPersistentStoreCoordinator* psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    if ([psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error])
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+							 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+							 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+	if ([psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:options error:&error])
     {
         NSManagedObjectContext* moc = [[NSManagedObjectContext alloc] init];
         [moc setPersistentStoreCoordinator:psc];
