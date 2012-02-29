@@ -27,7 +27,7 @@
 
 #pragma mark - Channels
 
-ECDefineDebugChannel(ECTValueCellControllerChannel);
+ECDefineDebugChannel(ECTBindingChannel);
 
 #pragma mark - Properties
 
@@ -123,11 +123,19 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     if (!result)
     {
         // if we've got a key set, use that to look up a value on the object
-        NSString* mappedKey = [self.mappings objectForKey:keyIn];
-        if (mappedKey)
-        {
-            result = [self.object valueForKeyPath:mappedKey];
-        }
+        NSString* key = [self.mappings objectForKey:keyIn];
+		if (!key)
+		{
+			key = keyIn;
+		}
+		@try 
+		{
+            result = [self.object valueForKeyPath:key];
+		}
+		@catch (NSException* exception)
+		{
+			ECDebug(ECTBindingChannel, @"object %@ doesn't support key path %@", object, key);
+		}
     }
     
     return result;
