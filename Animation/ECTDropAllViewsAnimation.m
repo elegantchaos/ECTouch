@@ -7,10 +7,10 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECDropAllViewsAnimation.h"
+#import "ECTDropAllViewsAnimation.h"
 
 
-@implementation ECDropAllViewsAnimation
+@implementation ECTDropAllViewsAnimation
 
 // --------------------------------------------------------------------------
 //! Animate all subviews of a view so that they drop in from the

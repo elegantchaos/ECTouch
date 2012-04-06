@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ECDropAllViewsAnimation : NSObject 
+@interface ECTDropAllViewsAnimation : NSObject 
 {
 
 }
