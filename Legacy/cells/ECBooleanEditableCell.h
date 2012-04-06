@@ -9,10 +9,9 @@
 
 @interface ECBooleanEditableCell : ECValueCell
 {
-	ECPropertyVariable(key, NSString*);
 }
 
-ECPropertyRetained(key, NSString*);
+@property (strong, nonatomic) NSString* key;
 
 // --------------------------------------------------------------------------
 // Public Methods

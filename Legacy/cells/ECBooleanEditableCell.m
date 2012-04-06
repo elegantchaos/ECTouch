@@ -15,7 +15,7 @@
 
 ECDefineDebugChannel(BooleanEditableCellChannel);
 
-ECPropertySynthesize(key);
+@synthesize key = _key;
 
 // --------------------------------------------------------------------------
 //! Initialise the cell.

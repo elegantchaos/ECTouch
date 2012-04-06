@@ -30,7 +30,7 @@ ECDefineDebugChannel(ECListTableControllerChannel);
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(data);
+@synthesize data = _data;
 
 // --------------------------------------------------------------------------
 // Data Key Constants
@@ -72,7 +72,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (void) dealloc 
 {
-	ECPropertyDealloc(data);
+	[_data release];
 	
 	[mAddButton release];
 	

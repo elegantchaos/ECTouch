@@ -8,7 +8,7 @@
 #import "ECValueCell.h"
 #import "ECDataItem.h"
 
-#import "ECProperties.h"
+
 
 @implementation ECValueCell
 
@@ -16,7 +16,7 @@
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(item);
+@synthesize item = _item;
 
 // --------------------------------------------------------------------------
 //! Initialise with a data item.

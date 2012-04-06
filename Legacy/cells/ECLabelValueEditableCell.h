@@ -7,16 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ECLabelValueCell.h"
-#import "ECProperties.h"
+
 
 @interface ECLabelValueEditableCell : ECLabelValueCell<UITextFieldDelegate> 
 {
-	ECPropertyVariable(label, UILabel*);
-	ECPropertyVariable(text, UITextField*);
 }
 
-ECPropertyRetained(label, UILabel*);
-ECPropertyRetained(text, UITextField*);
+@property (strong, nonatomic) UILabel* label;
+@property (strong, nonatomic) UITextField* text;
 
 // --------------------------------------------------------------------------
 // Public Methods

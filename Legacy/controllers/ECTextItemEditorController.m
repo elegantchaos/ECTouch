@@ -14,9 +14,9 @@
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(data);
-ECPropertySynthesize(editor);
-ECPropertySynthesize(label);
+@synthesize data = _data;
+@synthesize editor = _editor;
+@synthesize label = _label;
 
 // --------------------------------------------------------------------------
 //! Initialise
@@ -82,9 +82,9 @@ ECPropertySynthesize(label);
 
 - (void) dealloc 
 {
-	ECPropertyDealloc(data);
-	ECPropertyDealloc(editor);
-	ECPropertyDealloc(label);
+	[_data release];
+	[_editor release];
+	[_label release];
 
     [super dealloc];
 }

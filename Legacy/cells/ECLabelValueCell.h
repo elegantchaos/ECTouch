@@ -7,20 +7,19 @@
 
 #import <Foundation/Foundation.h>
 #import "ECDataDrivenTableCell.h"
-#import "ECProperties.h"
+
 
 @class ECDataItem;
 
 @interface ECLabelValueCell : UITableViewCell<ECDataDrivenTableCell> 
 {
-	ECPropertyVariable(item, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(item, ECDataItem*);
+@property (strong, nonatomic) ECDataItem* item;
 
 // --------------------------------------------------------------------------
 // Public Methods

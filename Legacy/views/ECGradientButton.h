@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ECProperties.h"
 
 @class CAGradientLayer;
 
@@ -16,9 +15,9 @@
 
 }
 
-ECPropertyRetained(topColour, UIColor*);
-ECPropertyRetained(bottomColour, UIColor*);
-ECPropertyRetained(gradient, CAGradientLayer*);
+@property (strong, nonatomic) UIColor* topColour;
+@property (strong, nonatomic) UIColor* bottomColour;
+@property (strong, nonatomic) CAGradientLayer* gradient;
 
 - (void) updateColours;
 

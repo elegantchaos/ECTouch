@@ -9,13 +9,9 @@
 #import "ECLabelValueCell.h"
 
 @interface ECValueEditableCell : ECLabelValueCell<UITextFieldDelegate> 
-{
-	ECPropertyVariable(label, UILabel*);
-	ECPropertyVariable(text, UITextField*);
-}
 
-ECPropertyRetained(label, UILabel*);
-ECPropertyRetained(text, UITextField*);
+@property (strong, nonatomic) UILabel* label;
+@property (strong, nonatomic) UITextField* text;
 
 // --------------------------------------------------------------------------
 // Public Methods

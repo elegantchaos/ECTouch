@@ -24,8 +24,8 @@ enum
 	kTextTag
 };
 
-ECPropertySynthesize(label);
-ECPropertySynthesize(text);
+@synthesize label = _label;
+@synthesize text = _text;
 
 // --------------------------------------------------------------------------
 //! Initialise the cell.

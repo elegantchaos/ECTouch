@@ -12,9 +12,9 @@
 
 @implementation ECGradientButton
 
-ECPropertySynthesize(topColour);
-ECPropertySynthesize(bottomColour);
-ECPropertySynthesize(gradient);
+@synthesize topColour = _topColour;
+@synthesize bottomColour = _bottomColour;
+@synthesize gradient = _gradient;
 
 - (void) addCAGradient
 {
@@ -61,7 +61,7 @@ ECPropertySynthesize(gradient);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(gradient);
+	[_gradient release];
 	
 	[super dealloc];
 }

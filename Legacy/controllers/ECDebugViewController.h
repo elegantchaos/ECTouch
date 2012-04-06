@@ -8,10 +8,7 @@
 #import "ECLabelValueTableController.h"
 
 @interface ECDebugViewController : ECLabelValueTableController 
-{
-	ECPropertyVariable(channels, ECDataItem*);
-}
 
-ECPropertyRetained(channels, ECDataItem*);
+@property (strong, nonatomic) ECDataItem* channels;
 
 @end

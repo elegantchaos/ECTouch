@@ -10,11 +10,11 @@
 
 @implementation ECTouchAboutBoxController
 
-ECPropertySynthesize(application);
-ECPropertySynthesize(version);
-ECPropertySynthesize(about);
-ECPropertySynthesize(copyright);
-ECPropertySynthesize(logo);
+@synthesize application = _application;
+@synthesize version = _version;
+@synthesize about = _about;
+@synthesize copyright = _copyright;
+@synthesize logo = _logo;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
@@ -81,11 +81,11 @@ ECPropertySynthesize(logo);
 
 - (void)dealloc 
 {
-	ECPropertyDealloc(application);
-	ECPropertyDealloc(version);
-	ECPropertyDealloc(about);
-	ECPropertyDealloc(copyright);
-	ECPropertyDealloc(logo);
+	[_application release];
+	[_version release];
+	[_about release];
+	[_copyright release];
+	[_logo release];
 
     [super dealloc];
 }

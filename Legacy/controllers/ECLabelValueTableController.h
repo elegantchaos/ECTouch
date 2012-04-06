@@ -5,7 +5,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
+
 #import "ECDataItem.h"
 #import "ECDataDrivenView.h"
 
@@ -13,12 +13,10 @@
 
 @interface ECLabelValueTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 {
-	ECPropertyVariable(data, ECDataItem*);
-	ECPropertyVariable(cellClass, Class);
 }
 
-ECPropertyRetained(data, ECDataItem*);
-ECPropertyAssigned(cellClass, Class);
+@property (strong, nonatomic) ECDataItem* data;
+@property (assign, nonatomic) Class cellClass;
 
 - (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 

@@ -21,8 +21,8 @@ ECDefineDebugChannel(LabelValueTableChannel);
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(data);
-ECPropertySynthesize(cellClass);
+@synthesize data = _data;
+@synthesize cellClass = _cellClass;
 
 // --------------------------------------------------------------------------
 //! Initialise
@@ -54,7 +54,7 @@ ECPropertySynthesize(cellClass);
 
 - (void) dealloc 
 {
-	ECPropertyDealloc(data);
+	[_data release];
 	
     [super dealloc];
 }

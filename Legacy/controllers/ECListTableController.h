@@ -5,7 +5,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
+
 #import "ECDataDrivenView.h"
 
 #include <UIKit/UIKit.h>
@@ -24,15 +24,13 @@
 	BOOL							mExtensible;	//!< Can we add new items?
 	UIBarButtonItem*				mAddButton;		
 	BOOL							mIgnoreNextNotification;
-	
-	ECPropertyVariable(data, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(data, ECDataItem*);
+@property (strong, nonatomic) ECDataItem* data;
 
 // --------------------------------------------------------------------------
 // Public Methods

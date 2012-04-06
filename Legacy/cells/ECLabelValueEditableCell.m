@@ -25,8 +25,8 @@ enum
 
 ECDefineLogChannel(ECLabelValueEditorChannel);
 
-ECPropertySynthesize(label);
-ECPropertySynthesize(text);
+@synthesize label = _label;
+@synthesize text = _text;
 
 // --------------------------------------------------------------------------
 //! Initialise the cell.

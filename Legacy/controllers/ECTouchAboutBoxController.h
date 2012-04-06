@@ -6,21 +6,14 @@
 // --------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
-#import "ECProperties.h"
+
 
 @interface ECTouchAboutBoxController : UIViewController 
-{
-    ECPropertyVariable(application, UILabel*);
-    ECPropertyVariable(version, UILabel*);
-    ECPropertyVariable(about, UITextField*);
-    ECPropertyVariable(copyright, UILabel*);
-    ECPropertyVariable(logo, UIImageView*);
-}
 
-ECPropertyRetained(application, IBOutlet UILabel*);
-ECPropertyRetained(version, IBOutlet UILabel*);
-ECPropertyRetained(about, IBOutlet UITextField*);
-ECPropertyRetained(copyright, IBOutlet UILabel*);
-ECPropertyRetained(logo, IBOutlet UIImageView*);
+@property (strong, nonatomic) IBOutlet UILabel* application;
+@property (strong, nonatomic) IBOutlet UILabel* version;
+@property (strong, nonatomic) IBOutlet UITextField* about;
+@property (strong, nonatomic) IBOutlet UILabel* copyright;
+@property (strong, nonatomic) IBOutlet UIImageView* logo;
 
 @end

@@ -8,22 +8,17 @@
 #import <UIKit/UIKit.h>
 
 #import "ECDataDrivenView.h"
-#import "ECProperties.h"
+
 
 @interface ECTextItemEditorController : UIViewController<ECDataDrivenView, UITextFieldDelegate>
-{
-	ECPropertyVariable(data, ECDataItem*);
-	ECPropertyVariable(editor, UITextField*);
-	ECPropertyVariable(label, UILabel*);
-}
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(data, ECDataItem*);
-ECPropertyRetained(editor, IBOutlet UITextField*);
-ECPropertyRetained(label, IBOutlet UILabel*);
+@property (strong, nonatomic) ECDataItem* data;
+@property (strong, nonatomic) IBOutlet UITextField* editor;
+@property (strong, nonatomic) IBOutlet UILabel* label;
 
 // --------------------------------------------------------------------------
 // Outlets
