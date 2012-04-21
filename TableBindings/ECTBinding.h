@@ -45,4 +45,7 @@
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options;
 - (void)removeValueObserver:(id)observer;
 
+- (void)setupView:(UIViewController*)view forNavigationController:(UINavigationController*)navigation;
+- (void)pushView:(UIViewController*)view forNavigationController:(UINavigationController*)navigation;
+
 @end

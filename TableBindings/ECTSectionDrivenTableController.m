@@ -148,61 +148,19 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     UIViewController* view = [section disclosureViewForRowAtIndexPath:indexPath detail:detail];
     if (view)
     {
+		UINavigationController* navigation = self.navigator; // on iOS 4, we don't have child view controllers, so the navigation controller sometimes has to be set explicitly
+		if (!navigation)
+		{
+			navigation = self.navigationController; // we can infer the navigation controller automatically if we're on it, or (iOS 5 only) a child of a controller on it
+		}
+		
         ECTBinding* binding = [section bindingForRowAtIndexPath:indexPath];
-        NSString* title = [binding lookupDisclosureKey:ECTTitleKey];
-        if (!title)
-        {
-            title = [binding label];
-        }
-        if (title)
-        {
-            view.title = title;   
-        }
-
-        UINavigationController* navigation = self.navigator; // on iOS 4, we don't have child view controllers, so the navigation controller sometimes has to be set explicitly
-        if (!navigation)
-        {
-            navigation = self.navigationController; // we can infer the navigation controller automatically if we're on it, or (iOS 5 only) a child of a controller on it
-        }
-        
-        BOOL isSectionDriven = [view isKindOfClass:[ECTSectionDrivenTableController class]];
-        ECTSectionDrivenTableController* asSectionDriven = (ECTSectionDrivenTableController*) view;
-        if (isSectionDriven)
-        {
-            asSectionDriven.navigator = navigation;
-        }
-        
-        BOOL isDisclosure = [view conformsToProtocol:@protocol(ECTBindingViewController)];
-        if (isDisclosure)
-        {
-            [(id<ECTBindingViewController>) view setupForBinding:binding];
-        }
-        
-        if (isSectionDriven)
-        {
-            NSArray* sectionsData = [ECCoercion asArray:[binding lookupDisclosureKey:ECTSectionsKey]];
-            if (sectionsData)
-            {
-                for (id sectionData in sectionsData)
-                {
-                    ECTSection* section = [ECTSection sectionWithProperties:sectionData];
-                    [asSectionDriven addSection:section];
-                }
-            }
-        }
+		[binding setupView:view forNavigationController:navigation];
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (navigation)
         {
-            NSString* back = [binding lookupDisclosureKey:ECTBackKey];
-            if (back)
-            {
-                UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:back style:UIBarButtonItemStylePlain target:nil action:nil];
-                navigation.topViewController.navigationItem.backBarButtonItem = backButton;
-                [backButton release];
-            }
-            [navigation pushViewController:view animated:YES];
-            ECDebug(ECTSectionDrivenTableControllerChannel, @"pushed %@ into navigation stack for %@", view, self.navigationController);
+			[binding pushView:view forNavigationController:navigation];
         }
         else
         {

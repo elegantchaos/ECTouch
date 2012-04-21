@@ -15,6 +15,8 @@
 #import "ECTSimpleCell.h"
 #import "ECTKeys.h"
 
+#import "ECTSectionDrivenTableController.h"
+
 #pragma mark - Constants
 
 @interface ECTBinding()
@@ -220,6 +222,59 @@ ECDefineDebugChannel(ECTBindingChannel);
         NSString* mappedKey = [self.mappings objectForKey:key];
         [self.object removeObserver:observer forKeyPath:mappedKey];
     }
+}
+
+- (void)setupView:(UIViewController*)view forNavigationController:(UINavigationController*)navigation
+{
+	NSString* title = [self lookupDisclosureKey:ECTTitleKey];
+	if (!title)
+	{
+		title = [self label];
+	}
+	if (title)
+	{
+		view.title = title;   
+	}
+	
+	BOOL isSectionDriven = [view isKindOfClass:[ECTSectionDrivenTableController class]];
+	ECTSectionDrivenTableController* asSectionDriven = (ECTSectionDrivenTableController*) view;
+	if (isSectionDriven)
+	{
+		asSectionDriven.navigator = navigation;
+	}
+	
+	BOOL isDisclosure = [view conformsToProtocol:@protocol(ECTBindingViewController)];
+	if (isDisclosure)
+	{
+		[(id<ECTBindingViewController>) view setupForBinding:self];
+	}
+	
+	if (isSectionDriven)
+	{
+		NSArray* sectionsData = [ECCoercion asArray:[self lookupDisclosureKey:ECTSectionsKey]];
+		if (sectionsData)
+		{
+			for (id sectionData in sectionsData)
+			{
+				ECTSection* section = [ECTSection sectionWithProperties:sectionData];
+				[asSectionDriven addSection:section];
+			}
+		}
+	}
+	
+}
+
+- (void)pushView:(UIViewController*)view forNavigationController:(UINavigationController*)navigation
+{
+	NSString* back = [self lookupDisclosureKey:ECTBackKey];
+	if (back)
+	{
+		UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:back style:UIBarButtonItemStylePlain target:nil action:nil];
+		navigation.topViewController.navigationItem.backBarButtonItem = backButton;
+		[backButton release];
+	}
+	[navigation pushViewController:view animated:YES];
+	ECDebug(ECTBindingChannel, @"pushed %@ into navigation stack for %@", view, navigation);	
 }
 
 @end
