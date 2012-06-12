@@ -21,8 +21,8 @@
 
 @implementation ECTAppDelegate
 
-@synthesize model;
-@synthesize window;
+@synthesize model = _model;
+@synthesize window = _window;
 
 ECDefineDebugChannel(ApplicationChannel);
 
@@ -41,8 +41,9 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (void)dealloc 
 {
-    [model release];
-    
+    [_model release];
+    [_window release];
+	
     [super dealloc];
 }
 
