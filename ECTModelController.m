@@ -14,9 +14,10 @@
 
 ECDefineDebugChannel(ModelChannel);
 
-+ (ECTModelController*)sharedInstance
++ (id)sharedInstance
 {
-    return [ECTAppDelegate sharedInstance].model;
+	ECTAppDelegate* app = [ECTAppDelegate sharedInstance];
+    return app.model;
 }
 
 

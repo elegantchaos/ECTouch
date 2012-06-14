@@ -15,7 +15,7 @@
 @property (strong, nonatomic) id model;
 @property (strong, nonatomic) UIWindow* window;
 
-+ (ECTAppDelegate*)sharedInstance;
++ (id)sharedInstance;
 
 - (id)newModelController;
 - (UIViewController*)newRootViewController;

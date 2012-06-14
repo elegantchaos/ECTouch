@@ -13,6 +13,8 @@
 #import "ECAssertion.h"
 #import "ECLogging.h"
 #import "ECLogManager.h"
+#import "ECLogHandlerNSLog.h"
+#import "ECErrorPresenterHandler.h"
 
 @interface ECTAppDelegate()
 - (void)startupLogging;
@@ -30,7 +32,7 @@ ECDefineDebugChannel(ApplicationChannel);
 //! Return the normal instance.
 // --------------------------------------------------------------------------
 
-+ (ECTAppDelegate*)sharedInstance
++ (id)sharedInstance
 {
 	return [UIApplication sharedApplication].delegate;
 }
@@ -143,9 +145,16 @@ ECDefineDebugChannel(ApplicationChannel);
 - (void)startupLogging
 {
     ECLogManager* lm = [ECLogManager sharedInstance];
-    [lm startup];
-    [lm registerDefaultHandler];
 	
+	ECLogHandler* nslogHandler = [[ECLogHandlerNSLog alloc] init];
+	[lm registerHandler: nslogHandler];
+	[nslogHandler release];
+    
+	ECErrorPresenterHandler* errorPresenterHandler = [[ECErrorPresenterHandler alloc] init];
+	[lm registerHandler: errorPresenterHandler];
+	[errorPresenterHandler release];
+
+    [lm startup];
 }
 
 // --------------------------------------------------------------------------

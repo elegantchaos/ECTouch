@@ -88,7 +88,7 @@
 	
 }
 
-- (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound
+- (id)findEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value
 {
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
@@ -100,6 +100,13 @@
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:&error];
     NSManagedObject* result = [fetchedObjects firstObjectOrNil];
     [request release];
+    
+    return result;
+}
+
+- (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound
+{
+    NSManagedObject* result = [self findEntityForName:entityName forKey:key value:value];
 	if (wasFound)
 	{
 		*wasFound = (result != nil);
@@ -112,6 +119,7 @@
 	else
 	{
         ECDebug(ModelChannel, @"made %@ with %@ == %@, %@", entityName, key, value, result);
+		NSError* error = nil;
         result = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.managedObjectContext];
 		[result setValue:value forKey:key];
         [self.managedObjectContext save:&error];
