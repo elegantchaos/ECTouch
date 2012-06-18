@@ -156,10 +156,39 @@
 	return [self allEntitiesForName:entityName predicate:nil sort:sort];
 }
 
+- (void)deleteAllEntitiesForName:(NSString*)entityName
+{
+	NSFetchRequest* request = [[NSFetchRequest alloc] init];
+	[request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext]];
+	[request setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+	
+	NSError* error = nil;
+	NSArray* objects = [self.managedObjectContext executeFetchRequest:request error:&error];
+	[request release];
+
+	if (objects)
+	{
+		//error handling goes here
+		for (NSManagedObject* object in objects)
+		{
+			[self.managedObjectContext deleteObject:object];
+		}
+	}
+	else
+	{
+		ECDebug(ModelChannel, @"couldn't delete all %@ entities, error: @%", entityName, error);
+	}
+	
+	[self save];
+}
+
 - (void)save
 {
 	NSError* error = nil;
-	[self.managedObjectContext save:&error];
+	if (![self.managedObjectContext save:&error])
+	{
+		ECDebug(ModelChannel, @"could save model: error %@", error);
+	}
 }
 
 @end

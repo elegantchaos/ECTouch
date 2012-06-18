@@ -30,5 +30,6 @@
 - (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound;
 - (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSArray*)sort;
 - (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSArray*)sort;
+- (void)deleteAllEntitiesForName:(NSString*)entityName;
 
 @end
