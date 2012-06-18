@@ -15,6 +15,7 @@
 #import "NSBundle+ECCore.h"
 
 #import "ECLogging.h"
+#import "ECErrorReporter.h"
 
 #import <CoreData/CoreData.h>
 
@@ -187,7 +188,9 @@
 	NSError* error = nil;
 	if (![self.managedObjectContext save:&error])
 	{
-		ECDebug(ModelChannel, @"could save model: error %@", error);
+		NSLog(@"error %@", error);
+		
+		[ECErrorReporter reportError:error message:@"couldn't save model"];
 	}
 }
 
