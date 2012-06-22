@@ -17,6 +17,12 @@
 #import "ECErrorPresenterHandler.h"
 
 @interface ECTAppDelegate()
+
+@property (strong, nonatomic) UIImageView* splash;
+
+- (void)showSplash;
+- (void)hideSplash;
+- (void)hiddenSplash;
 - (void)startupLogging;
 - (void)shutdownLogging;
 @end
@@ -24,6 +30,7 @@
 @implementation ECTAppDelegate
 
 @synthesize model = _model;
+@synthesize splash = _splash;
 @synthesize window = _window;
 
 ECDefineDebugChannel(ApplicationChannel);
@@ -71,6 +78,8 @@ ECDefineDebugChannel(ApplicationChannel);
 	[nw makeKeyAndVisible];
 	[nrvc release];
 	[nw release];
+	
+	[self showSplash];
 	
 	return YES;
 }
@@ -191,6 +200,38 @@ ECDefineDebugChannel(ApplicationChannel);
 	ECAssertShouldntBeHere();
 	
 	return nil;
+}
+
+#pragma mark - Splash Screen
+
+- (void)showSplash
+{
+    UIImage* image = [UIImage imageNamed:@"Default.png"];
+	if (image)
+	{
+		UIImageView* iv = [[UIImageView alloc] initWithImage:image];
+		iv.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+		iv.contentMode = UIViewContentModeCenter;
+		[self.window.rootViewController.view addSubview:iv];
+		[self performSelector:@selector(hideSplash) withObject:nil afterDelay:0.0];
+		self.splash = iv;
+		[iv release];
+	}
+}
+
+- (void)hideSplash
+{
+    [UIView beginAnimations:@"fade out splash" context:nil];
+    [UIView setAnimationDidStopSelector:@selector(hiddenSplash)];
+    self.splash.alpha = 0.0;
+    [UIView commitAnimations];
+    self.splash = nil;
+}
+
+- (void)hiddenSplash
+{
+    [self.splash removeFromSuperview];
+    self.splash = nil;
 }
 
 @end
