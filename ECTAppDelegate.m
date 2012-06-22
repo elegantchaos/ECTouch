@@ -159,10 +159,12 @@ ECDefineDebugChannel(ApplicationChannel);
 	[lm registerHandler: nslogHandler];
 	[nslogHandler release];
     
+#if EC_DEBUG
 	ECErrorPresenterHandler* errorPresenterHandler = [[ECErrorPresenterHandler alloc] init];
 	[lm registerHandler: errorPresenterHandler];
 	[errorPresenterHandler release];
-
+#endif
+	
     [lm startup];
 }
 
