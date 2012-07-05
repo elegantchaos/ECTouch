@@ -169,7 +169,6 @@
 
 	if (objects)
 	{
-		//error handling goes here
 		for (NSManagedObject* object in objects)
 		{
 			[self.managedObjectContext deleteObject:object];
@@ -177,7 +176,7 @@
 	}
 	else
 	{
-		ECDebug(ModelChannel, @"couldn't delete all %@ entities, error: @%", entityName, error);
+		[ECErrorReporter reportError:error message:@"couldn't delete all %@ entities", entityName];
 	}
 	
 	[self save];
