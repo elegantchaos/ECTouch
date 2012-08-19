@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ECSingleton.h"
 
 @interface ECTPopoverController : NSObject<UIPopoverControllerDelegate>
 

@@ -9,7 +9,6 @@
 
 #import "ECTSwitchCell.h"
 #import "ECTBinding.h"
-#import "ECLogging.h"
 
 @interface ECTSwitchCell()
 

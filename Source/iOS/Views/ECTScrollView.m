@@ -8,7 +8,6 @@
 // --------------------------------------------------------------------------
 
 #import "ECTScrollView.h"
-#import "ECLogging.h"
 
 #pragma mark - Constants
 

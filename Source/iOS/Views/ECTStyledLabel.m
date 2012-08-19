@@ -9,11 +9,6 @@
 
 #import "ECTStyledLabel.h"
 
-#import "NSMutableAttributedString+ECCore.h"
-
-#import "UIFont+ECCore.h"
-#import "ECLogging.h"
-
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 

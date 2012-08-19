@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECTTappableStyledLabel.h"
-#import "ECLogging.h"
+
 #import "ECDocumentParser.h"
 
 #import <CoreText/CoreText.h>

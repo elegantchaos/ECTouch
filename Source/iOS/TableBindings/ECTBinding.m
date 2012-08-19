@@ -9,9 +9,6 @@
 
 #import "ECTBinding.h"
 
-#import "ECCoercion.h"
-#import "ECLogging.h"
-
 #import "ECTSimpleCell.h"
 #import "ECTKeys.h"
 

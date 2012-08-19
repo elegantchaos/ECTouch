@@ -1,0 +1,821 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2204C65915E15A5700F71E15 /* ECTDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5F815E15A5700F71E15 /* ECTDropAllViewsAnimation.h */; };
+		2204C65B15E15A5700F71E15 /* ECTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FA15E15A5700F71E15 /* ECTAppDelegate.h */; };
+		2204C65C15E15A5700F71E15 /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C5FB15E15A5700F71E15 /* ECTAppDelegate.m */; };
+		2204C65D15E15A5700F71E15 /* ECTCoreDataModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FC15E15A5700F71E15 /* ECTCoreDataModelController.h */; };
+		2204C65E15E15A5700F71E15 /* ECTCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C5FD15E15A5700F71E15 /* ECTCoreDataModelController.m */; };
+		2204C65F15E15A5700F71E15 /* ECTModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FE15E15A5700F71E15 /* ECTModelController.h */; };
+		2204C66015E15A5700F71E15 /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C5FF15E15A5700F71E15 /* ECTModelController.m */; };
+		2204C68215E15A5700F71E15 /* ECGradientButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62515E15A5700F71E15 /* ECGradientButton.h */; };
+		2204C68315E15A5700F71E15 /* ECGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62615E15A5700F71E15 /* ECGradientButton.m */; };
+		2204C68415E15A5700F71E15 /* ECGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62715E15A5700F71E15 /* ECGradientView.h */; };
+		2204C68515E15A5700F71E15 /* ECGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62815E15A5700F71E15 /* ECGradientView.m */; };
+		2204C68615E15A5700F71E15 /* ECTBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62A15E15A5700F71E15 /* ECTBinding.h */; };
+		2204C68715E15A5700F71E15 /* ECTBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62B15E15A5700F71E15 /* ECTBinding.m */; };
+		2204C68815E15A5700F71E15 /* ECTBindingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62C15E15A5700F71E15 /* ECTBindingViewController.h */; };
+		2204C68915E15A5700F71E15 /* ECTButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62D15E15A5700F71E15 /* ECTButtonCell.h */; };
+		2204C68A15E15A5700F71E15 /* ECTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62E15E15A5700F71E15 /* ECTButtonCell.m */; };
+		2204C68B15E15A5700F71E15 /* ECTEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62F15E15A5700F71E15 /* ECTEditableCell.h */; };
+		2204C68C15E15A5700F71E15 /* ECTEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63015E15A5700F71E15 /* ECTEditableCell.m */; };
+		2204C68D15E15A5700F71E15 /* ECTKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63115E15A5700F71E15 /* ECTKeys.h */; };
+		2204C68E15E15A5700F71E15 /* ECTKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63215E15A5700F71E15 /* ECTKeys.m */; };
+		2204C68F15E15A5700F71E15 /* ECTSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63315E15A5700F71E15 /* ECTSection.h */; };
+		2204C69015E15A5700F71E15 /* ECTSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63415E15A5700F71E15 /* ECTSection.m */; };
+		2204C69115E15A5700F71E15 /* ECTSectionDrivenTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63515E15A5700F71E15 /* ECTSectionDrivenTableController.h */; };
+		2204C69215E15A5700F71E15 /* ECTSectionDrivenTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63615E15A5700F71E15 /* ECTSectionDrivenTableController.m */; };
+		2204C69315E15A5700F71E15 /* ECTSimpleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63715E15A5700F71E15 /* ECTSimpleCell.h */; };
+		2204C69415E15A5700F71E15 /* ECTSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63815E15A5700F71E15 /* ECTSimpleCell.m */; };
+		2204C69515E15A5700F71E15 /* ECTSingleTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63915E15A5700F71E15 /* ECTSingleTableViewController.h */; };
+		2204C69615E15A5700F71E15 /* ECTSingleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63A15E15A5700F71E15 /* ECTSingleTableViewController.m */; };
+		2204C69715E15A5700F71E15 /* ECTSubtitleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63B15E15A5700F71E15 /* ECTSubtitleCell.h */; };
+		2204C69815E15A5700F71E15 /* ECTSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63C15E15A5700F71E15 /* ECTSubtitleCell.m */; };
+		2204C69915E15A5700F71E15 /* ECTSwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63D15E15A5700F71E15 /* ECTSwitchCell.h */; };
+		2204C69A15E15A5700F71E15 /* ECTSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63E15E15A5700F71E15 /* ECTSwitchCell.m */; };
+		2204C69B15E15A5700F71E15 /* ECTTickCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63F15E15A5700F71E15 /* ECTTickCell.h */; };
+		2204C69C15E15A5700F71E15 /* ECTTickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64015E15A5700F71E15 /* ECTTickCell.m */; };
+		2204C69D15E15A5700F71E15 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2204C64115E15A5700F71E15 /* README.md */; };
+		2204C69E15E15A5700F71E15 /* ECTAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64315E15A5700F71E15 /* ECTAlertView.h */; };
+		2204C69F15E15A5700F71E15 /* ECTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64415E15A5700F71E15 /* ECTAlertView.m */; };
+		2204C6A015E15A5700F71E15 /* ECTPopoverBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64515E15A5700F71E15 /* ECTPopoverBarButtonItem.h */; };
+		2204C6A115E15A5700F71E15 /* ECTPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64615E15A5700F71E15 /* ECTPopoverBarButtonItem.m */; };
+		2204C6A215E15A5700F71E15 /* ECTPopoverContentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64715E15A5700F71E15 /* ECTPopoverContentController.h */; };
+		2204C6A315E15A5700F71E15 /* ECTPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64815E15A5700F71E15 /* ECTPopoverContentController.m */; };
+		2204C6A415E15A5700F71E15 /* ECTPopoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64915E15A5700F71E15 /* ECTPopoverController.h */; };
+		2204C6A515E15A5700F71E15 /* ECTPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64A15E15A5700F71E15 /* ECTPopoverController.m */; };
+		2204C6A615E15A5700F71E15 /* ECTScrollingStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64B15E15A5700F71E15 /* ECTScrollingStyledLabel.h */; };
+		2204C6A715E15A5700F71E15 /* ECTScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64C15E15A5700F71E15 /* ECTScrollingStyledLabel.m */; };
+		2204C6A815E15A5700F71E15 /* ECTScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64D15E15A5700F71E15 /* ECTScrollView.h */; };
+		2204C6A915E15A5700F71E15 /* ECTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64E15E15A5700F71E15 /* ECTScrollView.m */; };
+		2204C6AA15E15A5700F71E15 /* ECTStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64F15E15A5700F71E15 /* ECTStyledLabel.h */; };
+		2204C6AB15E15A5700F71E15 /* ECTStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65015E15A5700F71E15 /* ECTStyledLabel.m */; };
+		2204C6AC15E15A5700F71E15 /* ECTTabbedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65115E15A5700F71E15 /* ECTTabbedTableViewController.h */; };
+		2204C6AD15E15A5700F71E15 /* ECTTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65215E15A5700F71E15 /* ECTTabbedTableViewController.m */; };
+		2204C6AE15E15A5700F71E15 /* ECTTappableStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65315E15A5700F71E15 /* ECTTappableStyledLabel.h */; };
+		2204C6AF15E15A5700F71E15 /* ECTTappableStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65415E15A5700F71E15 /* ECTTappableStyledLabel.m */; };
+		2204C6B015E15A5700F71E15 /* ECTTransparentToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65515E15A5700F71E15 /* ECTTransparentToolbar.h */; };
+		2204C6B115E15A5700F71E15 /* ECTTransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65615E15A5700F71E15 /* ECTTransparentToolbar.m */; };
+		2204C6B215E15A5700F71E15 /* ECVersionLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65715E15A5700F71E15 /* ECVersionLabel.h */; };
+		2204C6B315E15A5700F71E15 /* ECVersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65815E15A5700F71E15 /* ECVersionLabel.m */; };
+		22339C3915DEC1C60017BC6B /* ECTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */; };
+		22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
+		2251BA6315DBD93700F2FE40 /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2251BA6115DBD93700F2FE40 /* BasicTests.m */; };
+		2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3CD14F52E93009142F7 /* SenTestingKit.framework */; };
+		2274B39014F56896003B8A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274B38F14F56896003B8A0B /* UIKit.framework */; };
+		2274B39114F56896003B8A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237ECE314F5644C00085BF5 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2204C5EC15E1536200F71E15 /* ECCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ECCore.framework; path = "/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug/ECCore.framework"; sourceTree = "<absolute>"; };
+		2204C5ED15E1536200F71E15 /* ECLogging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ECLogging.framework; path = "/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug/ECLogging.framework"; sourceTree = "<absolute>"; };
+		2204C5F815E15A5700F71E15 /* ECTDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTDropAllViewsAnimation.h; sourceTree = "<group>"; };
+		2204C5F915E15A5700F71E15 /* ECTDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTDropAllViewsAnimation.m; sourceTree = "<group>"; };
+		2204C5FA15E15A5700F71E15 /* ECTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAppDelegate.h; sourceTree = "<group>"; };
+		2204C5FB15E15A5700F71E15 /* ECTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAppDelegate.m; sourceTree = "<group>"; };
+		2204C5FC15E15A5700F71E15 /* ECTCoreDataModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTCoreDataModelController.h; sourceTree = "<group>"; };
+		2204C5FD15E15A5700F71E15 /* ECTCoreDataModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTCoreDataModelController.m; sourceTree = "<group>"; };
+		2204C5FE15E15A5700F71E15 /* ECTModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTModelController.h; sourceTree = "<group>"; };
+		2204C5FF15E15A5700F71E15 /* ECTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTModelController.m; sourceTree = "<group>"; };
+		2204C60215E15A5700F71E15 /* ECBooleanEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBooleanEditableCell.h; sourceTree = "<group>"; };
+		2204C60315E15A5700F71E15 /* ECBooleanEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBooleanEditableCell.m; sourceTree = "<group>"; };
+		2204C60415E15A5700F71E15 /* ECCellProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCellProperties.h; sourceTree = "<group>"; };
+		2204C60515E15A5700F71E15 /* ECCellProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCellProperties.m; sourceTree = "<group>"; };
+		2204C60615E15A5700F71E15 /* ECDataDrivenTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataDrivenTableCell.h; sourceTree = "<group>"; };
+		2204C60715E15A5700F71E15 /* ECLabelValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueCell.h; sourceTree = "<group>"; };
+		2204C60815E15A5700F71E15 /* ECLabelValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueCell.m; sourceTree = "<group>"; };
+		2204C60915E15A5700F71E15 /* ECLabelValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueEditableCell.h; sourceTree = "<group>"; };
+		2204C60A15E15A5700F71E15 /* ECLabelValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueEditableCell.m; sourceTree = "<group>"; };
+		2204C60B15E15A5700F71E15 /* ECValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECValueCell.h; sourceTree = "<group>"; };
+		2204C60C15E15A5700F71E15 /* ECValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECValueCell.m; sourceTree = "<group>"; };
+		2204C60D15E15A5700F71E15 /* ECValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECValueEditableCell.h; sourceTree = "<group>"; };
+		2204C60E15E15A5700F71E15 /* ECValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECValueEditableCell.m; sourceTree = "<group>"; };
+		2204C61015E15A5700F71E15 /* ECDataDrivenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataDrivenView.h; sourceTree = "<group>"; };
+		2204C61115E15A5700F71E15 /* ECDataDrivenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataDrivenView.m; sourceTree = "<group>"; };
+		2204C61215E15A5700F71E15 /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
+		2204C61315E15A5700F71E15 /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
+		2204C61415E15A5700F71E15 /* ECItemListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECItemListTableController.h; sourceTree = "<group>"; };
+		2204C61515E15A5700F71E15 /* ECItemListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECItemListTableController.m; sourceTree = "<group>"; };
+		2204C61615E15A5700F71E15 /* ECLabelValueTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueTableController.h; sourceTree = "<group>"; };
+		2204C61715E15A5700F71E15 /* ECLabelValueTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueTableController.m; sourceTree = "<group>"; };
+		2204C61815E15A5700F71E15 /* ECListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECListTableController.h; sourceTree = "<group>"; };
+		2204C61915E15A5700F71E15 /* ECListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECListTableController.m; sourceTree = "<group>"; };
+		2204C61A15E15A5700F71E15 /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNavigationController.h; sourceTree = "<group>"; };
+		2204C61B15E15A5700F71E15 /* ECNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECNavigationController.m; sourceTree = "<group>"; };
+		2204C61C15E15A5700F71E15 /* ECRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRootTabBarController.h; sourceTree = "<group>"; };
+		2204C61D15E15A5700F71E15 /* ECRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRootTabBarController.m; sourceTree = "<group>"; };
+		2204C61E15E15A5700F71E15 /* ECTextItemEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTextItemEditorController.h; sourceTree = "<group>"; };
+		2204C61F15E15A5700F71E15 /* ECTextItemEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTextItemEditorController.m; sourceTree = "<group>"; };
+		2204C62015E15A5700F71E15 /* ECTickListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTickListTableController.h; sourceTree = "<group>"; };
+		2204C62115E15A5700F71E15 /* ECTickListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTickListTableController.m; sourceTree = "<group>"; };
+		2204C62215E15A5700F71E15 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchAboutBoxController.h; sourceTree = "<group>"; };
+		2204C62315E15A5700F71E15 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		2204C62515E15A5700F71E15 /* ECGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGradientButton.h; sourceTree = "<group>"; };
+		2204C62615E15A5700F71E15 /* ECGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGradientButton.m; sourceTree = "<group>"; };
+		2204C62715E15A5700F71E15 /* ECGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGradientView.h; sourceTree = "<group>"; };
+		2204C62815E15A5700F71E15 /* ECGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGradientView.m; sourceTree = "<group>"; };
+		2204C62A15E15A5700F71E15 /* ECTBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTBinding.h; sourceTree = "<group>"; };
+		2204C62B15E15A5700F71E15 /* ECTBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTBinding.m; sourceTree = "<group>"; };
+		2204C62C15E15A5700F71E15 /* ECTBindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTBindingViewController.h; sourceTree = "<group>"; };
+		2204C62D15E15A5700F71E15 /* ECTButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTButtonCell.h; sourceTree = "<group>"; };
+		2204C62E15E15A5700F71E15 /* ECTButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTButtonCell.m; sourceTree = "<group>"; };
+		2204C62F15E15A5700F71E15 /* ECTEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTEditableCell.h; sourceTree = "<group>"; };
+		2204C63015E15A5700F71E15 /* ECTEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTEditableCell.m; sourceTree = "<group>"; };
+		2204C63115E15A5700F71E15 /* ECTKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTKeys.h; sourceTree = "<group>"; };
+		2204C63215E15A5700F71E15 /* ECTKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTKeys.m; sourceTree = "<group>"; };
+		2204C63315E15A5700F71E15 /* ECTSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSection.h; sourceTree = "<group>"; };
+		2204C63415E15A5700F71E15 /* ECTSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSection.m; sourceTree = "<group>"; };
+		2204C63515E15A5700F71E15 /* ECTSectionDrivenTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSectionDrivenTableController.h; sourceTree = "<group>"; };
+		2204C63615E15A5700F71E15 /* ECTSectionDrivenTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSectionDrivenTableController.m; sourceTree = "<group>"; };
+		2204C63715E15A5700F71E15 /* ECTSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSimpleCell.h; sourceTree = "<group>"; };
+		2204C63815E15A5700F71E15 /* ECTSimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSimpleCell.m; sourceTree = "<group>"; };
+		2204C63915E15A5700F71E15 /* ECTSingleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSingleTableViewController.h; sourceTree = "<group>"; };
+		2204C63A15E15A5700F71E15 /* ECTSingleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSingleTableViewController.m; sourceTree = "<group>"; };
+		2204C63B15E15A5700F71E15 /* ECTSubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSubtitleCell.h; sourceTree = "<group>"; };
+		2204C63C15E15A5700F71E15 /* ECTSubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSubtitleCell.m; sourceTree = "<group>"; };
+		2204C63D15E15A5700F71E15 /* ECTSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSwitchCell.h; sourceTree = "<group>"; };
+		2204C63E15E15A5700F71E15 /* ECTSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSwitchCell.m; sourceTree = "<group>"; };
+		2204C63F15E15A5700F71E15 /* ECTTickCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTickCell.h; sourceTree = "<group>"; };
+		2204C64015E15A5700F71E15 /* ECTTickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTickCell.m; sourceTree = "<group>"; };
+		2204C64115E15A5700F71E15 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		2204C64315E15A5700F71E15 /* ECTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAlertView.h; sourceTree = "<group>"; };
+		2204C64415E15A5700F71E15 /* ECTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAlertView.m; sourceTree = "<group>"; };
+		2204C64515E15A5700F71E15 /* ECTPopoverBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverBarButtonItem.h; sourceTree = "<group>"; };
+		2204C64615E15A5700F71E15 /* ECTPopoverBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverBarButtonItem.m; sourceTree = "<group>"; };
+		2204C64715E15A5700F71E15 /* ECTPopoverContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverContentController.h; sourceTree = "<group>"; };
+		2204C64815E15A5700F71E15 /* ECTPopoverContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverContentController.m; sourceTree = "<group>"; };
+		2204C64915E15A5700F71E15 /* ECTPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverController.h; sourceTree = "<group>"; };
+		2204C64A15E15A5700F71E15 /* ECTPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverController.m; sourceTree = "<group>"; };
+		2204C64B15E15A5700F71E15 /* ECTScrollingStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTScrollingStyledLabel.h; sourceTree = "<group>"; };
+		2204C64C15E15A5700F71E15 /* ECTScrollingStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTScrollingStyledLabel.m; sourceTree = "<group>"; };
+		2204C64D15E15A5700F71E15 /* ECTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTScrollView.h; sourceTree = "<group>"; };
+		2204C64E15E15A5700F71E15 /* ECTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTScrollView.m; sourceTree = "<group>"; };
+		2204C64F15E15A5700F71E15 /* ECTStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTStyledLabel.h; sourceTree = "<group>"; };
+		2204C65015E15A5700F71E15 /* ECTStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTStyledLabel.m; sourceTree = "<group>"; };
+		2204C65115E15A5700F71E15 /* ECTTabbedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTabbedTableViewController.h; sourceTree = "<group>"; };
+		2204C65215E15A5700F71E15 /* ECTTabbedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTabbedTableViewController.m; sourceTree = "<group>"; };
+		2204C65315E15A5700F71E15 /* ECTTappableStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTappableStyledLabel.h; sourceTree = "<group>"; };
+		2204C65415E15A5700F71E15 /* ECTTappableStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTappableStyledLabel.m; sourceTree = "<group>"; };
+		2204C65515E15A5700F71E15 /* ECTTransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTransparentToolbar.h; sourceTree = "<group>"; };
+		2204C65615E15A5700F71E15 /* ECTTransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTransparentToolbar.m; sourceTree = "<group>"; };
+		2204C65715E15A5700F71E15 /* ECVersionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECVersionLabel.h; sourceTree = "<group>"; };
+		2204C65815E15A5700F71E15 /* ECVersionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECVersionLabel.m; sourceTree = "<group>"; };
+		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2237ECE314F5644C00085BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2251BA1315DBCC4A00F2FE40 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2251BA4315DBCD3900F2FE40 /* IOSDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSDebug.xcconfig; sourceTree = "<group>"; };
+		2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSRelease.xcconfig; sourceTree = "<group>"; };
+		2251BA5C15DBD68500F2FE40 /* IOSUnitTestDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSUnitTestDebug.xcconfig; sourceTree = "<group>"; };
+		2251BA5D15DBD68500F2FE40 /* IOSUnitTestRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSUnitTestRelease.xcconfig; sourceTree = "<group>"; };
+		2251BA6115DBD93700F2FE40 /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTests.m; sourceTree = "<group>"; };
+		2251BA6C15DBDA5100F2FE40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ECUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ECConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22552BC7134B9E5300B8894E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22552BC9134B9E5300B8894E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22552BCB134B9E5300B8894E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22552BE6134BA0C900B8894E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		22552C12134BA18A00B8894E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		22602234141F8A160044644C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		22602236141F8A230044644C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
+		22602238141F8A460044644C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
+		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
+		2274B37814F56679003B8A0B /* ECLoggingTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECLoggingTests.plist; sourceTree = "<group>"; };
+		2274B38D14F56896003B8A0B /* ECTextIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECTextIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2274B38F14F56896003B8A0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2283A3BB14F52E93009142F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2283A3BE14F52E93009142F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2283A3BF14F52E93009142F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2283A3C014F52E93009142F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2283A3CD14F52E93009142F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2283A4CB14F53C6F009142F7 /* ECTouchShared.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchShared.pch; sourceTree = "<group>"; };
+		22970D3C14F5AA80007B254B /* ECTouchDebug.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchDebug.pch; sourceTree = "<group>"; };
+		22970D3D14F5AA80007B254B /* ECTouchRelease.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchRelease.pch; sourceTree = "<group>"; };
+		22BE50B8149662D0007CC214 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		22BE51331496BD00007CC214 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		22BE51351496BD25007CC214 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		22FAC46C132149E900103630 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2251BA0F15DBCC4A00F2FE40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2274B38914F56896003B8A0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */,
+				22339C3915DEC1C60017BC6B /* ECTouch.framework in Frameworks */,
+				2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */,
+				2274B39014F56896003B8A0B /* UIKit.framework in Frameworks */,
+				2274B39114F56896003B8A0B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2274B38D14F56896003B8A0B /* ECTextIOSTests.octest */,
+				2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */,
+			);
+			name = Products;
+			path = ../..;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				22BBB10114F646D20086974D /* Source */,
+				2274B37714F56679003B8A0B /* Resources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = ECFoundation;
+			sourceTree = "<group>";
+			usesTabs = 1;
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2204C5EC15E1536200F71E15 /* ECCore.framework */,
+				2204C5ED15E1536200F71E15 /* ECLogging.framework */,
+				2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */,
+				2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */,
+				223CBAE11205C5930008A641 /* iOS */,
+				1058C7B0FEA5585E11CA2CBB /* MacOS */,
+				1058C7B2FEA5585E11CA2CBB /* Testing */,
+				2283A3BB14F52E93009142F7 /* Cocoa.framework */,
+				2283A3CD14F52E93009142F7 /* SenTestingKit.framework */,
+				2237ECE314F5644C00085BF5 /* Foundation.framework */,
+				2274B38F14F56896003B8A0B /* UIKit.framework */,
+				2251BA1315DBCC4A00F2FE40 /* CoreFoundation.framework */,
+				2283A3BD14F52E93009142F7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				2260223A141F8A4E0044644C /* libcrypto.dylib */,
+				22602238141F8A460044644C /* Security.framework */,
+				22602236141F8A230044644C /* IOKit.framework */,
+				22602234141F8A160044644C /* Carbon.framework */,
+				2229674F1354EDC5005F42E7 /* CoreFoundation.framework */,
+				22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */,
+				22552C12134BA18A00B8894E /* CoreLocation.framework */,
+				22FAC46C132149E900103630 /* CoreLocation.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = MacOS;
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				227333B811EBBA3000695FB4 /* GHUnit.framework */,
+			);
+			name = Testing;
+			sourceTree = "<group>";
+		};
+		2204C5F715E15A5700F71E15 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2204C5F815E15A5700F71E15 /* ECTDropAllViewsAnimation.h */,
+				2204C5F915E15A5700F71E15 /* ECTDropAllViewsAnimation.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		2204C60015E15A5700F71E15 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				2204C60115E15A5700F71E15 /* cells */,
+				2204C60F15E15A5700F71E15 /* controllers */,
+				2204C62415E15A5700F71E15 /* views */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
+		2204C60115E15A5700F71E15 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				2204C60215E15A5700F71E15 /* ECBooleanEditableCell.h */,
+				2204C60315E15A5700F71E15 /* ECBooleanEditableCell.m */,
+				2204C60415E15A5700F71E15 /* ECCellProperties.h */,
+				2204C60515E15A5700F71E15 /* ECCellProperties.m */,
+				2204C60615E15A5700F71E15 /* ECDataDrivenTableCell.h */,
+				2204C60715E15A5700F71E15 /* ECLabelValueCell.h */,
+				2204C60815E15A5700F71E15 /* ECLabelValueCell.m */,
+				2204C60915E15A5700F71E15 /* ECLabelValueEditableCell.h */,
+				2204C60A15E15A5700F71E15 /* ECLabelValueEditableCell.m */,
+				2204C60B15E15A5700F71E15 /* ECValueCell.h */,
+				2204C60C15E15A5700F71E15 /* ECValueCell.m */,
+				2204C60D15E15A5700F71E15 /* ECValueEditableCell.h */,
+				2204C60E15E15A5700F71E15 /* ECValueEditableCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		2204C60F15E15A5700F71E15 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2204C61015E15A5700F71E15 /* ECDataDrivenView.h */,
+				2204C61115E15A5700F71E15 /* ECDataDrivenView.m */,
+				2204C61215E15A5700F71E15 /* ECDebugViewController.h */,
+				2204C61315E15A5700F71E15 /* ECDebugViewController.m */,
+				2204C61415E15A5700F71E15 /* ECItemListTableController.h */,
+				2204C61515E15A5700F71E15 /* ECItemListTableController.m */,
+				2204C61615E15A5700F71E15 /* ECLabelValueTableController.h */,
+				2204C61715E15A5700F71E15 /* ECLabelValueTableController.m */,
+				2204C61815E15A5700F71E15 /* ECListTableController.h */,
+				2204C61915E15A5700F71E15 /* ECListTableController.m */,
+				2204C61A15E15A5700F71E15 /* ECNavigationController.h */,
+				2204C61B15E15A5700F71E15 /* ECNavigationController.m */,
+				2204C61C15E15A5700F71E15 /* ECRootTabBarController.h */,
+				2204C61D15E15A5700F71E15 /* ECRootTabBarController.m */,
+				2204C61E15E15A5700F71E15 /* ECTextItemEditorController.h */,
+				2204C61F15E15A5700F71E15 /* ECTextItemEditorController.m */,
+				2204C62015E15A5700F71E15 /* ECTickListTableController.h */,
+				2204C62115E15A5700F71E15 /* ECTickListTableController.m */,
+				2204C62215E15A5700F71E15 /* ECTouchAboutBoxController.h */,
+				2204C62315E15A5700F71E15 /* ECTouchAboutBoxController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		2204C62415E15A5700F71E15 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2204C62515E15A5700F71E15 /* ECGradientButton.h */,
+				2204C62615E15A5700F71E15 /* ECGradientButton.m */,
+				2204C62715E15A5700F71E15 /* ECGradientView.h */,
+				2204C62815E15A5700F71E15 /* ECGradientView.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		2204C62915E15A5700F71E15 /* TableBindings */ = {
+			isa = PBXGroup;
+			children = (
+				2204C62A15E15A5700F71E15 /* ECTBinding.h */,
+				2204C62B15E15A5700F71E15 /* ECTBinding.m */,
+				2204C62C15E15A5700F71E15 /* ECTBindingViewController.h */,
+				2204C62D15E15A5700F71E15 /* ECTButtonCell.h */,
+				2204C62E15E15A5700F71E15 /* ECTButtonCell.m */,
+				2204C62F15E15A5700F71E15 /* ECTEditableCell.h */,
+				2204C63015E15A5700F71E15 /* ECTEditableCell.m */,
+				2204C63115E15A5700F71E15 /* ECTKeys.h */,
+				2204C63215E15A5700F71E15 /* ECTKeys.m */,
+				2204C63315E15A5700F71E15 /* ECTSection.h */,
+				2204C63415E15A5700F71E15 /* ECTSection.m */,
+				2204C63515E15A5700F71E15 /* ECTSectionDrivenTableController.h */,
+				2204C63615E15A5700F71E15 /* ECTSectionDrivenTableController.m */,
+				2204C63715E15A5700F71E15 /* ECTSimpleCell.h */,
+				2204C63815E15A5700F71E15 /* ECTSimpleCell.m */,
+				2204C63915E15A5700F71E15 /* ECTSingleTableViewController.h */,
+				2204C63A15E15A5700F71E15 /* ECTSingleTableViewController.m */,
+				2204C63B15E15A5700F71E15 /* ECTSubtitleCell.h */,
+				2204C63C15E15A5700F71E15 /* ECTSubtitleCell.m */,
+				2204C63D15E15A5700F71E15 /* ECTSwitchCell.h */,
+				2204C63E15E15A5700F71E15 /* ECTSwitchCell.m */,
+				2204C63F15E15A5700F71E15 /* ECTTickCell.h */,
+				2204C64015E15A5700F71E15 /* ECTTickCell.m */,
+				2204C64115E15A5700F71E15 /* README.md */,
+			);
+			path = TableBindings;
+			sourceTree = "<group>";
+		};
+		2204C64215E15A5700F71E15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2204C64315E15A5700F71E15 /* ECTAlertView.h */,
+				2204C64415E15A5700F71E15 /* ECTAlertView.m */,
+				2204C64515E15A5700F71E15 /* ECTPopoverBarButtonItem.h */,
+				2204C64615E15A5700F71E15 /* ECTPopoverBarButtonItem.m */,
+				2204C64715E15A5700F71E15 /* ECTPopoverContentController.h */,
+				2204C64815E15A5700F71E15 /* ECTPopoverContentController.m */,
+				2204C64915E15A5700F71E15 /* ECTPopoverController.h */,
+				2204C64A15E15A5700F71E15 /* ECTPopoverController.m */,
+				2204C64B15E15A5700F71E15 /* ECTScrollingStyledLabel.h */,
+				2204C64C15E15A5700F71E15 /* ECTScrollingStyledLabel.m */,
+				2204C64D15E15A5700F71E15 /* ECTScrollView.h */,
+				2204C64E15E15A5700F71E15 /* ECTScrollView.m */,
+				2204C64F15E15A5700F71E15 /* ECTStyledLabel.h */,
+				2204C65015E15A5700F71E15 /* ECTStyledLabel.m */,
+				2204C65115E15A5700F71E15 /* ECTTabbedTableViewController.h */,
+				2204C65215E15A5700F71E15 /* ECTTabbedTableViewController.m */,
+				2204C65315E15A5700F71E15 /* ECTTappableStyledLabel.h */,
+				2204C65415E15A5700F71E15 /* ECTTappableStyledLabel.m */,
+				2204C65515E15A5700F71E15 /* ECTTransparentToolbar.h */,
+				2204C65615E15A5700F71E15 /* ECTTransparentToolbar.m */,
+				2204C65715E15A5700F71E15 /* ECVersionLabel.h */,
+				2204C65815E15A5700F71E15 /* ECVersionLabel.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		223CBAE11205C5930008A641 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				22BE51351496BD25007CC214 /* QuartzCore.framework */,
+				22BE51331496BD00007CC214 /* CoreData.framework */,
+				22BE50B8149662D0007CC214 /* CoreText.framework */,
+				22552BC7134B9E5300B8894E /* UIKit.framework */,
+				22552BC9134B9E5300B8894E /* Foundation.framework */,
+				22552BCB134B9E5300B8894E /* CoreGraphics.framework */,
+				22552BE6134BA0C900B8894E /* CoreLocation.framework */,
+				223CBAE61205C6380008A641 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2251BA4215DBCD3900F2FE40 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2251BA4315DBCD3900F2FE40 /* IOSDebug.xcconfig */,
+				2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */,
+				2251BA5C15DBD68500F2FE40 /* IOSUnitTestDebug.xcconfig */,
+				2251BA5D15DBD68500F2FE40 /* IOSUnitTestRelease.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2251BA6015DBD93700F2FE40 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2251BA6115DBD93700F2FE40 /* BasicTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2274B37714F56679003B8A0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2251BA6C15DBDA5100F2FE40 /* Info.plist */,
+				2274B37814F56679003B8A0B /* ECLoggingTests.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2283A3BD14F52E93009142F7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2283A3BE14F52E93009142F7 /* AppKit.framework */,
+				2283A3BF14F52E93009142F7 /* CoreData.framework */,
+				2283A3C014F52E93009142F7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2283A45514F53BCC009142F7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2204C5F715E15A5700F71E15 /* Animation */,
+				2204C5FA15E15A5700F71E15 /* ECTAppDelegate.h */,
+				2204C5FB15E15A5700F71E15 /* ECTAppDelegate.m */,
+				2204C5FC15E15A5700F71E15 /* ECTCoreDataModelController.h */,
+				2204C5FD15E15A5700F71E15 /* ECTCoreDataModelController.m */,
+				2204C5FE15E15A5700F71E15 /* ECTModelController.h */,
+				2204C5FF15E15A5700F71E15 /* ECTModelController.m */,
+				2204C60015E15A5700F71E15 /* Legacy */,
+				2204C62915E15A5700F71E15 /* TableBindings */,
+				2204C64215E15A5700F71E15 /* Views */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		2283A4C814F53C6F009142F7 /* Prefix */ = {
+			isa = PBXGroup;
+			children = (
+				22970D3C14F5AA80007B254B /* ECTouchDebug.pch */,
+				22970D3D14F5AA80007B254B /* ECTouchRelease.pch */,
+				2283A4CB14F53C6F009142F7 /* ECTouchShared.pch */,
+			);
+			path = Prefix;
+			sourceTree = "<group>";
+		};
+		22BBB10114F646D20086974D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2251BA4215DBCD3900F2FE40 /* Configuration */,
+				2283A45514F53BCC009142F7 /* iOS */,
+				2283A4C814F53C6F009142F7 /* Prefix */,
+				2251BA6015DBD93700F2FE40 /* Tests */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2251BA7A15DBDC2100F2FE40 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2204C65915E15A5700F71E15 /* ECTDropAllViewsAnimation.h in Headers */,
+				2204C65B15E15A5700F71E15 /* ECTAppDelegate.h in Headers */,
+				2204C65D15E15A5700F71E15 /* ECTCoreDataModelController.h in Headers */,
+				2204C65F15E15A5700F71E15 /* ECTModelController.h in Headers */,
+				2204C68215E15A5700F71E15 /* ECGradientButton.h in Headers */,
+				2204C68415E15A5700F71E15 /* ECGradientView.h in Headers */,
+				2204C68615E15A5700F71E15 /* ECTBinding.h in Headers */,
+				2204C68815E15A5700F71E15 /* ECTBindingViewController.h in Headers */,
+				2204C68915E15A5700F71E15 /* ECTButtonCell.h in Headers */,
+				2204C68B15E15A5700F71E15 /* ECTEditableCell.h in Headers */,
+				2204C68D15E15A5700F71E15 /* ECTKeys.h in Headers */,
+				2204C68F15E15A5700F71E15 /* ECTSection.h in Headers */,
+				2204C69115E15A5700F71E15 /* ECTSectionDrivenTableController.h in Headers */,
+				2204C69315E15A5700F71E15 /* ECTSimpleCell.h in Headers */,
+				2204C69515E15A5700F71E15 /* ECTSingleTableViewController.h in Headers */,
+				2204C69715E15A5700F71E15 /* ECTSubtitleCell.h in Headers */,
+				2204C69915E15A5700F71E15 /* ECTSwitchCell.h in Headers */,
+				2204C69B15E15A5700F71E15 /* ECTTickCell.h in Headers */,
+				2204C69E15E15A5700F71E15 /* ECTAlertView.h in Headers */,
+				2204C6A015E15A5700F71E15 /* ECTPopoverBarButtonItem.h in Headers */,
+				2204C6A215E15A5700F71E15 /* ECTPopoverContentController.h in Headers */,
+				2204C6A415E15A5700F71E15 /* ECTPopoverController.h in Headers */,
+				2204C6A615E15A5700F71E15 /* ECTScrollingStyledLabel.h in Headers */,
+				2204C6A815E15A5700F71E15 /* ECTScrollView.h in Headers */,
+				2204C6AA15E15A5700F71E15 /* ECTStyledLabel.h in Headers */,
+				2204C6AC15E15A5700F71E15 /* ECTTabbedTableViewController.h in Headers */,
+				2204C6AE15E15A5700F71E15 /* ECTTappableStyledLabel.h in Headers */,
+				2204C6B015E15A5700F71E15 /* ECTTransparentToolbar.h in Headers */,
+				2204C6B215E15A5700F71E15 /* ECVersionLabel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2251BA1115DBCC4A00F2FE40 /* ECTouchIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2251BA1C15DBCC4A00F2FE40 /* Build configuration list for PBXNativeTarget "ECTouchIOS" */;
+			buildPhases = (
+				2251BA0E15DBCC4A00F2FE40 /* Sources */,
+				2251BA7A15DBDC2100F2FE40 /* Headers */,
+				2251BA0F15DBCC4A00F2FE40 /* Frameworks */,
+				2251BA1015DBCC4A00F2FE40 /* Resources */,
+				2251BA7815DBDBE300F2FE40 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ECTouchIOS;
+			productName = "iOS Bundle";
+			productReference = 2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2274B38C14F56896003B8A0B /* ECTouchIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2274B3A114F56896003B8A0B /* Build configuration list for PBXNativeTarget "ECTouchIOSTests" */;
+			buildPhases = (
+				2274B38814F56896003B8A0B /* Sources */,
+				2274B38914F56896003B8A0B /* Frameworks */,
+				2274B38A14F56896003B8A0B /* Resources */,
+				2274B38B14F56896003B8A0B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ECTouchIOSTests;
+			productName = blahTests;
+			productReference = 2274B38D14F56896003B8A0B /* ECTextIOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Elegant Chaos";
+			};
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECTouch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+				ec,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* ECFoundation */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2251BA1115DBCC4A00F2FE40 /* ECTouchIOS */,
+				2274B38C14F56896003B8A0B /* ECTouchIOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2251BA1015DBCC4A00F2FE40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2204C69D15E15A5700F71E15 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2274B38A14F56896003B8A0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2251BA7815DBDBE300F2FE40 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${ECCONFIG_SCRIPTS_PATH}/package-pseudo-framework.sh\"";
+			showEnvVarsInLog = 0;
+		};
+		2274B38B14F56896003B8A0B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2251BA0E15DBCC4A00F2FE40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2204C65C15E15A5700F71E15 /* ECTAppDelegate.m in Sources */,
+				2204C65E15E15A5700F71E15 /* ECTCoreDataModelController.m in Sources */,
+				2204C66015E15A5700F71E15 /* ECTModelController.m in Sources */,
+				2204C68315E15A5700F71E15 /* ECGradientButton.m in Sources */,
+				2204C68515E15A5700F71E15 /* ECGradientView.m in Sources */,
+				2204C68715E15A5700F71E15 /* ECTBinding.m in Sources */,
+				2204C68A15E15A5700F71E15 /* ECTButtonCell.m in Sources */,
+				2204C68C15E15A5700F71E15 /* ECTEditableCell.m in Sources */,
+				2204C68E15E15A5700F71E15 /* ECTKeys.m in Sources */,
+				2204C69015E15A5700F71E15 /* ECTSection.m in Sources */,
+				2204C69215E15A5700F71E15 /* ECTSectionDrivenTableController.m in Sources */,
+				2204C69415E15A5700F71E15 /* ECTSimpleCell.m in Sources */,
+				2204C69615E15A5700F71E15 /* ECTSingleTableViewController.m in Sources */,
+				2204C69815E15A5700F71E15 /* ECTSubtitleCell.m in Sources */,
+				2204C69A15E15A5700F71E15 /* ECTSwitchCell.m in Sources */,
+				2204C69C15E15A5700F71E15 /* ECTTickCell.m in Sources */,
+				2204C69F15E15A5700F71E15 /* ECTAlertView.m in Sources */,
+				2204C6A115E15A5700F71E15 /* ECTPopoverBarButtonItem.m in Sources */,
+				2204C6A315E15A5700F71E15 /* ECTPopoverContentController.m in Sources */,
+				2204C6A515E15A5700F71E15 /* ECTPopoverController.m in Sources */,
+				2204C6A715E15A5700F71E15 /* ECTScrollingStyledLabel.m in Sources */,
+				2204C6A915E15A5700F71E15 /* ECTScrollView.m in Sources */,
+				2204C6AB15E15A5700F71E15 /* ECTStyledLabel.m in Sources */,
+				2204C6AD15E15A5700F71E15 /* ECTTabbedTableViewController.m in Sources */,
+				2204C6AF15E15A5700F71E15 /* ECTTappableStyledLabel.m in Sources */,
+				2204C6B115E15A5700F71E15 /* ECTTransparentToolbar.m in Sources */,
+				2204C6B315E15A5700F71E15 /* ECVersionLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2274B38814F56896003B8A0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2251BA6315DBD93700F2FE40 /* BasicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		2251BA1D15DBCC4A00F2FE40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+			};
+			name = Debug;
+		};
+		2251BA1E15DBCC4A00F2FE40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+			};
+			name = Release;
+		};
+		2274B3A214F56896003B8A0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2251BA5C15DBD68500F2FE40 /* IOSUnitTestDebug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Resources/ECTextTests.plist;
+			};
+			name = Debug;
+		};
+		2274B3A314F56896003B8A0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2251BA5D15DBD68500F2FE40 /* IOSUnitTestRelease.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Resources/ECTextTests.plist;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2251BA1C15DBCC4A00F2FE40 /* Build configuration list for PBXNativeTarget "ECTouchIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2251BA1D15DBCC4A00F2FE40 /* Debug */,
+				2251BA1E15DBCC4A00F2FE40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2274B3A114F56896003B8A0B /* Build configuration list for PBXNativeTarget "ECTouchIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2274B3A214F56896003B8A0B /* Debug */,
+				2274B3A314F56896003B8A0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

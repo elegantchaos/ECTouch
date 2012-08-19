@@ -13,12 +13,6 @@
 #import "ECTBinding.h"
 #import "ECTKeys.h"
 
-#import "ECLogging.h"
-#import "ECAssertion.h"
-#import "ECCoercion.h"
-
-#import "NSArray+ECCore.h"
-
 @interface ECTSection()
 
 @property (nonatomic, retain) id source;

@@ -8,7 +8,6 @@
 // --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
-#import "ECMacros.h"
 
 @class ECTBinding;
 @class ECTSectionDrivenTableController;

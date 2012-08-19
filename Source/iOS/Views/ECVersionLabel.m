@@ -8,8 +8,6 @@
 
 #import "ECVersionLabel.h"
 
-#import <ECFoundation/UIApplication+ECCore.h>
-
 @implementation ECVersionLabel
 
 - (void)setVersion

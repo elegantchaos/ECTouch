@@ -10,11 +10,6 @@
 #import "ECTAppDelegate.h"
 #import "ECTModelController.h"
 
-#import "ECAssertion.h"
-#import "ECLogging.h"
-#import "ECLogManager.h"
-#import "ECLogHandlerNSLog.h"
-#import "ECErrorPresenterHandler.h"
 
 @interface ECTAppDelegate()
 

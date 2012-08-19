@@ -9,10 +9,6 @@
 
 #import "ECTSectionDrivenTableController.h"
 
-#import "ECAssertion.h"
-#import "ECCoercion.h"
-#import "ECLogging.h"
-
 #import "ECTBinding.h"
 #import "ECTSection.h"
 #import "ECTKeys.h"

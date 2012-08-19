@@ -9,14 +9,6 @@
 
 #import "ECTCoreDataModelController.h"
 
-#import "NSFileManager+ECCore.h"
-#import "NSArray+ECCore.h"
-#import "UIApplication+ECCore.h"
-#import "NSBundle+ECCore.h"
-
-#import "ECLogging.h"
-#import "ECErrorReporter.h"
-
 #import <CoreData/CoreData.h>
 
 @interface ECTCoreDataModelController()
@@ -129,7 +121,7 @@
     return result;
 }
 
-- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSArray*)sort;
+- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSArray*)sort
 {
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];

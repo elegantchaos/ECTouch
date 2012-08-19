@@ -8,7 +8,6 @@
 // --------------------------------------------------------------------------
 
 #import "ECTSection.h"
-#import "ECMacros.h"
 
 // --------------------------------------------------------------------------
 //! Cell controller which sets a boolean property on an object.

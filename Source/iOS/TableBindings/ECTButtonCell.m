@@ -9,7 +9,6 @@
 
 #import "ECTButtonCell.h"
 #import "ECTBinding.h"
-#import "ECLogging.h"
 
 @interface ECTButtonCell()
 

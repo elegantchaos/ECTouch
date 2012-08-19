@@ -12,10 +12,6 @@
 #import "ECTBinding.h"
 #import "ECTKeys.h"
 
-#import "ECLogging.h"
-#import "ECAssertion.h"
-#import "UIFont+ECCore.h"
-
 @interface ECTSimpleCell()
 
 - (void)removeBinding;
@@ -38,7 +34,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 #pragma mark - Object lifecycle
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) != nil)
     {
