@@ -6,5 +6,8 @@
 
 #define EC_TOUCH 1
 
-#include <ECLogging/ECLogging.h>
+#ifdef __OBJC__
+
 #include <ECCore/ECCore.h>
+
+#endif

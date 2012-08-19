@@ -66,7 +66,6 @@
 		2204C6B315E15A5700F71E15 /* ECVersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65815E15A5700F71E15 /* ECVersionLabel.m */; };
 		22339C3915DEC1C60017BC6B /* ECTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */; };
 		22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
-		2251BA6315DBD93700F2FE40 /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2251BA6115DBD93700F2FE40 /* BasicTests.m */; };
 		2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3CD14F52E93009142F7 /* SenTestingKit.framework */; };
 		2274B39014F56896003B8A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274B38F14F56896003B8A0B /* UIKit.framework */; };
 		2274B39114F56896003B8A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237ECE314F5644C00085BF5 /* Foundation.framework */; };
@@ -177,7 +176,6 @@
 		2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSRelease.xcconfig; sourceTree = "<group>"; };
 		2251BA5C15DBD68500F2FE40 /* IOSUnitTestDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSUnitTestDebug.xcconfig; sourceTree = "<group>"; };
 		2251BA5D15DBD68500F2FE40 /* IOSUnitTestRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSUnitTestRelease.xcconfig; sourceTree = "<group>"; };
-		2251BA6115DBD93700F2FE40 /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTests.m; sourceTree = "<group>"; };
 		2251BA6C15DBDA5100F2FE40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ECUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2251BBAD15DC1B4E00F2FE40 /* ECConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ECConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -465,7 +463,6 @@
 		2251BA6015DBD93700F2FE40 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2251BA6115DBD93700F2FE40 /* BasicTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -726,7 +723,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2251BA6315DBD93700F2FE40 /* BasicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
