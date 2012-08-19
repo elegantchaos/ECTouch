@@ -71,6 +71,20 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2251BA1115DBCC4A00F2FE40"
+               BuildableName = "ECText.framework"
+               BlueprintName = "ECTextIOS"
+               ReferencedContainer = "container:../ECText/ECText.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2251BA1115DBCC4A00F2FE40"
                BuildableName = "ECTouch.framework"
                BlueprintName = "ECTouchIOS"
                ReferencedContainer = "container:ECTouch.xcodeproj">

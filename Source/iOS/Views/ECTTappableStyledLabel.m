@@ -9,7 +9,7 @@
 
 #import "ECTTappableStyledLabel.h"
 
-#import "ECDocumentParser.h"
+#import <ECText/ECDocumentParser.h>
 
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
