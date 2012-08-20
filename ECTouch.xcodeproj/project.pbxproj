@@ -749,11 +749,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
-				);
-				INFOPLIST_FILE = Resources/Info.plist;
 			};
 			name = Debug;
 		};
@@ -761,11 +756,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"/Caches/DerivedData/ECIntegration-fbajcwyruhnhxzgnphlhxaexutkp/Build/Products/Debug\"",
-				);
-				INFOPLIST_FILE = Resources/Info.plist;
 			};
 			name = Release;
 		};
