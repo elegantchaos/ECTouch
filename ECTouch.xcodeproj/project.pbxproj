@@ -7,63 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2204C65915E15A5700F71E15 /* ECTDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5F815E15A5700F71E15 /* ECTDropAllViewsAnimation.h */; };
-		2204C65B15E15A5700F71E15 /* ECTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FA15E15A5700F71E15 /* ECTAppDelegate.h */; };
+		2204C65915E15A5700F71E15 /* ECTDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5F815E15A5700F71E15 /* ECTDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2204C65B15E15A5700F71E15 /* ECTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FA15E15A5700F71E15 /* ECTAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C65C15E15A5700F71E15 /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C5FB15E15A5700F71E15 /* ECTAppDelegate.m */; };
-		2204C65D15E15A5700F71E15 /* ECTCoreDataModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FC15E15A5700F71E15 /* ECTCoreDataModelController.h */; };
+		2204C65D15E15A5700F71E15 /* ECTCoreDataModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FC15E15A5700F71E15 /* ECTCoreDataModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C65E15E15A5700F71E15 /* ECTCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C5FD15E15A5700F71E15 /* ECTCoreDataModelController.m */; };
-		2204C65F15E15A5700F71E15 /* ECTModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FE15E15A5700F71E15 /* ECTModelController.h */; };
+		2204C65F15E15A5700F71E15 /* ECTModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C5FE15E15A5700F71E15 /* ECTModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C66015E15A5700F71E15 /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C5FF15E15A5700F71E15 /* ECTModelController.m */; };
-		2204C68215E15A5700F71E15 /* ECGradientButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62515E15A5700F71E15 /* ECGradientButton.h */; };
+		2204C68215E15A5700F71E15 /* ECGradientButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62515E15A5700F71E15 /* ECGradientButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C68315E15A5700F71E15 /* ECGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62615E15A5700F71E15 /* ECGradientButton.m */; };
-		2204C68415E15A5700F71E15 /* ECGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62715E15A5700F71E15 /* ECGradientView.h */; };
+		2204C68415E15A5700F71E15 /* ECGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62715E15A5700F71E15 /* ECGradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C68515E15A5700F71E15 /* ECGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62815E15A5700F71E15 /* ECGradientView.m */; };
-		2204C68615E15A5700F71E15 /* ECTBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62A15E15A5700F71E15 /* ECTBinding.h */; };
+		2204C68615E15A5700F71E15 /* ECTBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62A15E15A5700F71E15 /* ECTBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C68715E15A5700F71E15 /* ECTBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62B15E15A5700F71E15 /* ECTBinding.m */; };
-		2204C68815E15A5700F71E15 /* ECTBindingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62C15E15A5700F71E15 /* ECTBindingViewController.h */; };
-		2204C68915E15A5700F71E15 /* ECTButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62D15E15A5700F71E15 /* ECTButtonCell.h */; };
+		2204C68815E15A5700F71E15 /* ECTBindingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62C15E15A5700F71E15 /* ECTBindingViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2204C68915E15A5700F71E15 /* ECTButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62D15E15A5700F71E15 /* ECTButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C68A15E15A5700F71E15 /* ECTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C62E15E15A5700F71E15 /* ECTButtonCell.m */; };
-		2204C68B15E15A5700F71E15 /* ECTEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62F15E15A5700F71E15 /* ECTEditableCell.h */; };
+		2204C68B15E15A5700F71E15 /* ECTEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C62F15E15A5700F71E15 /* ECTEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C68C15E15A5700F71E15 /* ECTEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63015E15A5700F71E15 /* ECTEditableCell.m */; };
-		2204C68D15E15A5700F71E15 /* ECTKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63115E15A5700F71E15 /* ECTKeys.h */; };
+		2204C68D15E15A5700F71E15 /* ECTKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63115E15A5700F71E15 /* ECTKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C68E15E15A5700F71E15 /* ECTKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63215E15A5700F71E15 /* ECTKeys.m */; };
-		2204C68F15E15A5700F71E15 /* ECTSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63315E15A5700F71E15 /* ECTSection.h */; };
+		2204C68F15E15A5700F71E15 /* ECTSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63315E15A5700F71E15 /* ECTSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69015E15A5700F71E15 /* ECTSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63415E15A5700F71E15 /* ECTSection.m */; };
-		2204C69115E15A5700F71E15 /* ECTSectionDrivenTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63515E15A5700F71E15 /* ECTSectionDrivenTableController.h */; };
+		2204C69115E15A5700F71E15 /* ECTSectionDrivenTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63515E15A5700F71E15 /* ECTSectionDrivenTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69215E15A5700F71E15 /* ECTSectionDrivenTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63615E15A5700F71E15 /* ECTSectionDrivenTableController.m */; };
-		2204C69315E15A5700F71E15 /* ECTSimpleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63715E15A5700F71E15 /* ECTSimpleCell.h */; };
+		2204C69315E15A5700F71E15 /* ECTSimpleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63715E15A5700F71E15 /* ECTSimpleCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69415E15A5700F71E15 /* ECTSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63815E15A5700F71E15 /* ECTSimpleCell.m */; };
-		2204C69515E15A5700F71E15 /* ECTSingleTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63915E15A5700F71E15 /* ECTSingleTableViewController.h */; };
+		2204C69515E15A5700F71E15 /* ECTSingleTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63915E15A5700F71E15 /* ECTSingleTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69615E15A5700F71E15 /* ECTSingleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63A15E15A5700F71E15 /* ECTSingleTableViewController.m */; };
-		2204C69715E15A5700F71E15 /* ECTSubtitleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63B15E15A5700F71E15 /* ECTSubtitleCell.h */; };
+		2204C69715E15A5700F71E15 /* ECTSubtitleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63B15E15A5700F71E15 /* ECTSubtitleCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69815E15A5700F71E15 /* ECTSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63C15E15A5700F71E15 /* ECTSubtitleCell.m */; };
-		2204C69915E15A5700F71E15 /* ECTSwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63D15E15A5700F71E15 /* ECTSwitchCell.h */; };
+		2204C69915E15A5700F71E15 /* ECTSwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63D15E15A5700F71E15 /* ECTSwitchCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69A15E15A5700F71E15 /* ECTSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C63E15E15A5700F71E15 /* ECTSwitchCell.m */; };
-		2204C69B15E15A5700F71E15 /* ECTTickCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63F15E15A5700F71E15 /* ECTTickCell.h */; };
+		2204C69B15E15A5700F71E15 /* ECTTickCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C63F15E15A5700F71E15 /* ECTTickCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69C15E15A5700F71E15 /* ECTTickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64015E15A5700F71E15 /* ECTTickCell.m */; };
 		2204C69D15E15A5700F71E15 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2204C64115E15A5700F71E15 /* README.md */; };
-		2204C69E15E15A5700F71E15 /* ECTAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64315E15A5700F71E15 /* ECTAlertView.h */; };
+		2204C69E15E15A5700F71E15 /* ECTAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64315E15A5700F71E15 /* ECTAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C69F15E15A5700F71E15 /* ECTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64415E15A5700F71E15 /* ECTAlertView.m */; };
-		2204C6A015E15A5700F71E15 /* ECTPopoverBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64515E15A5700F71E15 /* ECTPopoverBarButtonItem.h */; };
+		2204C6A015E15A5700F71E15 /* ECTPopoverBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64515E15A5700F71E15 /* ECTPopoverBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6A115E15A5700F71E15 /* ECTPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64615E15A5700F71E15 /* ECTPopoverBarButtonItem.m */; };
-		2204C6A215E15A5700F71E15 /* ECTPopoverContentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64715E15A5700F71E15 /* ECTPopoverContentController.h */; };
+		2204C6A215E15A5700F71E15 /* ECTPopoverContentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64715E15A5700F71E15 /* ECTPopoverContentController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6A315E15A5700F71E15 /* ECTPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64815E15A5700F71E15 /* ECTPopoverContentController.m */; };
-		2204C6A415E15A5700F71E15 /* ECTPopoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64915E15A5700F71E15 /* ECTPopoverController.h */; };
+		2204C6A415E15A5700F71E15 /* ECTPopoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64915E15A5700F71E15 /* ECTPopoverController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6A515E15A5700F71E15 /* ECTPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64A15E15A5700F71E15 /* ECTPopoverController.m */; };
-		2204C6A615E15A5700F71E15 /* ECTScrollingStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64B15E15A5700F71E15 /* ECTScrollingStyledLabel.h */; };
+		2204C6A615E15A5700F71E15 /* ECTScrollingStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64B15E15A5700F71E15 /* ECTScrollingStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6A715E15A5700F71E15 /* ECTScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64C15E15A5700F71E15 /* ECTScrollingStyledLabel.m */; };
-		2204C6A815E15A5700F71E15 /* ECTScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64D15E15A5700F71E15 /* ECTScrollView.h */; };
+		2204C6A815E15A5700F71E15 /* ECTScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64D15E15A5700F71E15 /* ECTScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6A915E15A5700F71E15 /* ECTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C64E15E15A5700F71E15 /* ECTScrollView.m */; };
-		2204C6AA15E15A5700F71E15 /* ECTStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64F15E15A5700F71E15 /* ECTStyledLabel.h */; };
+		2204C6AA15E15A5700F71E15 /* ECTStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C64F15E15A5700F71E15 /* ECTStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6AB15E15A5700F71E15 /* ECTStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65015E15A5700F71E15 /* ECTStyledLabel.m */; };
-		2204C6AC15E15A5700F71E15 /* ECTTabbedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65115E15A5700F71E15 /* ECTTabbedTableViewController.h */; };
+		2204C6AC15E15A5700F71E15 /* ECTTabbedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65115E15A5700F71E15 /* ECTTabbedTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6AD15E15A5700F71E15 /* ECTTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65215E15A5700F71E15 /* ECTTabbedTableViewController.m */; };
-		2204C6AE15E15A5700F71E15 /* ECTTappableStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65315E15A5700F71E15 /* ECTTappableStyledLabel.h */; };
+		2204C6AE15E15A5700F71E15 /* ECTTappableStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65315E15A5700F71E15 /* ECTTappableStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6AF15E15A5700F71E15 /* ECTTappableStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65415E15A5700F71E15 /* ECTTappableStyledLabel.m */; };
-		2204C6B015E15A5700F71E15 /* ECTTransparentToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65515E15A5700F71E15 /* ECTTransparentToolbar.h */; };
+		2204C6B015E15A5700F71E15 /* ECTTransparentToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65515E15A5700F71E15 /* ECTTransparentToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6B115E15A5700F71E15 /* ECTTransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65615E15A5700F71E15 /* ECTTransparentToolbar.m */; };
-		2204C6B215E15A5700F71E15 /* ECVersionLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65715E15A5700F71E15 /* ECVersionLabel.h */; };
+		2204C6B215E15A5700F71E15 /* ECVersionLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C65715E15A5700F71E15 /* ECVersionLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2204C6B315E15A5700F71E15 /* ECVersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204C65815E15A5700F71E15 /* ECVersionLabel.m */; };
+		2204C89815E29E0E00F71E15 /* ECTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C89715E29E0E00F71E15 /* ECTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22339C3915DEC1C60017BC6B /* ECTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */; };
 		22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
 		2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3CD14F52E93009142F7 /* SenTestingKit.framework */; };
@@ -167,6 +168,7 @@
 		2204C65615E15A5700F71E15 /* ECTTransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTransparentToolbar.m; sourceTree = "<group>"; };
 		2204C65715E15A5700F71E15 /* ECVersionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECVersionLabel.h; sourceTree = "<group>"; };
 		2204C65815E15A5700F71E15 /* ECVersionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECVersionLabel.m; sourceTree = "<group>"; };
+		2204C89715E29E0E00F71E15 /* ECTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouch.h; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2237ECE314F5644C00085BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -190,7 +192,7 @@
 		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2274B37814F56679003B8A0B /* ECLoggingTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECLoggingTests.plist; sourceTree = "<group>"; };
-		2274B38D14F56896003B8A0B /* ECTextIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECTextIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2274B38D14F56896003B8A0B /* ECTextIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ECTextIOSTests.octest; path = ECTouchIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274B38F14F56896003B8A0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2283A3BB14F52E93009142F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2283A3BE14F52E93009142F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -489,6 +491,7 @@
 		2283A45514F53BCC009142F7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2204C89715E29E0E00F71E15 /* ECTouch.h */,
 				2204C5F715E15A5700F71E15 /* Animation */,
 				2204C5FA15E15A5700F71E15 /* ECTAppDelegate.h */,
 				2204C5FB15E15A5700F71E15 /* ECTAppDelegate.m */,
@@ -560,6 +563,7 @@
 				2204C6AE15E15A5700F71E15 /* ECTTappableStyledLabel.h in Headers */,
 				2204C6B015E15A5700F71E15 /* ECTTransparentToolbar.h in Headers */,
 				2204C6B215E15A5700F71E15 /* ECVersionLabel.h in Headers */,
+				2204C89815E29E0E00F71E15 /* ECTouch.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
