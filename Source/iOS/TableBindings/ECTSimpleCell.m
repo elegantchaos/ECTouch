@@ -69,7 +69,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (void)prepareForReuse
 {
-    ECAssertNil(self.binding);
+	[self removeBinding]; // TODO - previously this asserted that the binding was nil, but it doesn't always seem to get cleared; need to investigate why
     [super prepareForReuse];
     ECDebug(ECTSimpleCellChannel, @"reusing cell %@", self);
 
