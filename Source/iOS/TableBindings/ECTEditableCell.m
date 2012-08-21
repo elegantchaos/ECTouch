@@ -71,9 +71,14 @@ ECDefineLogChannel(ItemCellChannel);
 		
         self.detailTextLabel.hidden = YES;
 
+#ifdef __IPHONE_6_0
+		NSTextAlignment alignment = NSTextAlignmentRight;
+#else
+		UITextAlignment alignment = UITextAlignmentRight;
+#endif
 		UITextField* textField = [[UITextField alloc] initWithFrame: rect];
 		textField.clearsOnBeginEditing = NO;
-		textField.textAlignment = UITextAlignmentRight;
+		textField.textAlignment = alignment;
 		textField.textColor = [UIColor blueTextColor];
         textField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         textField.returnKeyType = UIReturnKeyDone;
