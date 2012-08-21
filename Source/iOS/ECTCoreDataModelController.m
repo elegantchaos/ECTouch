@@ -131,16 +131,21 @@
 	[request setSortDescriptors:sort];
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
     [request release];
-	
-    if (result)
+
+	if (result)
     {
         ECDebug(ModelChannel, @"retrieved %d %@ entities", [result count], entityName);
 	}
 	else
 	{
-        ECDebug(ModelChannel, @" couldn't get %@ entities, error: @%", entityName, result);
+        ECDebug(ModelChannel, @"couldn't get %@ entities, error: @%", entityName, error);
     }
-    
+
+	if (predicate)
+	{
+		ECDebug(ModelChannel, @"predicate was %@", predicate);
+	}
+
     return result;
 }
 
