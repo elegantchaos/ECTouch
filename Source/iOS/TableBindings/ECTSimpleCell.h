@@ -33,6 +33,8 @@ typedef enum
 - (void)setupAccessory;
 - (BOOL)canDelete;
 - (BOOL)canMove;
-- (void)updateUIForEvent:(UpdateEvent)event;
+- (BOOL)updateUIForEvent:(UpdateEvent)event;
+- (BOOL)updateLabel:(UILabel*)label value:(NSString*)value event:(UpdateEvent)event;
+- (BOOL)updateLabel:(UILabel*)label key:(NSString*)key event:(UpdateEvent)event;
 
 @end

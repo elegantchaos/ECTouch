@@ -85,56 +85,49 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     [super didMoveToSuperview];
 }
 
-- (void)updateUIForEvent:(UpdateEvent)event
+- (BOOL)updateMainLabel:(NSString*)value event:(UpdateEvent)event
+{
+	return [self updateLabel:self.textLabel value:value event:event];
+}
+
+- (BOOL)updateDetailLabel:(NSString*)detail event:(UpdateEvent)event
+{
+	return [self updateLabel:self.detailTextLabel value:detail event:event];
+}
+
+- (BOOL)updateUIForEvent:(UpdateEvent)event
 {
     // get image to use
     UIImage* image = [self.binding image];
     self.imageView.image = image;
     
-    // get text to use for label
-    NSString* label = [binding label];
-    if (![label isKindOfClass:[NSString class]])
+    // get text to use for value and detail labels
+    NSString* mainLabel = [binding label];
+    NSString* detailLabel = [binding detail];
+
+    // if detail and value map to the same thing, don't show detail
+	if (detailLabel == mainLabel)
     {
-        label = [label description];
-    }
-    
-    // get text to use for detail - if it's the same as the label, don't show detail
-    NSString* detail = [binding detail];
-    if (detail == label)
-    {
-        detail = nil;
+        detailLabel = nil;
     }
     
     self.canMove = [binding canMove];
     self.canDelete = [binding canDelete];
     
     self.selectionStyle = binding.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
-    
-    self.textLabel.enabled = binding.enabled;
 
-    BOOL changed = NO;
-    NSString* oldLabel = self.textLabel.text;
-    if (![oldLabel isEqualToString:label])
+    BOOL changed = [self updateMainLabel:mainLabel event:event];
+    if (detailLabel)
     {
-        self.textLabel.text = label;
-        changed = YES;
+		changed = [self updateDetailLabel:detailLabel event:event] || changed;
     }
     
-    if (detail)
-    {
-        if (![detail isKindOfClass:[NSString class]])
-        {
-            detail = [detail description];
-        }
-        self.detailTextLabel.enabled = binding.enabled;
-        NSString* oldDetail = self.detailTextLabel.text;
-        if (![oldDetail isEqualToString:detail])
-        {
-            self.detailTextLabel.text = detail;
-            changed = YES;
-        }
-    }
-    
+    return changed;
+}
+
+- (void)updateAndLayoutUIForEvent:(UpdateEvent)event
+{
+	BOOL changed = [self updateUIForEvent:event];
     if (changed)
     {
         if (event == ValueChanged)
@@ -142,7 +135,6 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
             [self layoutSubviews];
         }
     }
-    
 }
 
 - (void)setupFontForLabel:(UILabel*)label key:(NSString*)key info:(NSDictionary*)fontInfo
@@ -167,7 +159,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     }
     
     [self setupAccessory];
-    [self updateUIForEvent:ValueInitialised];
+    [self updateAndLayoutUIForEvent:ValueInitialised];
     [newBinding addValueObserver:self options:NSKeyValueObservingOptionNew];
 }
 
@@ -210,8 +202,28 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 {
     if (context == self.binding)
     {
-        [self updateUIForEvent:ValueChanged];
+        [self updateAndLayoutUIForEvent:ValueChanged];
     }
+}
+
+- (BOOL)updateLabel:(UILabel*)label value:(NSString*)value event:(UpdateEvent)event
+{
+    BOOL enabled = self.binding.enabled;
+
+    BOOL changed = (![value isEqualToString:label.text]) || (enabled != label.enabled);
+    if (changed)
+    {
+        label.text = value;
+        label.enabled = enabled;
+    }
+
+    return changed;
+}
+
+- (BOOL)updateLabel:(UILabel*)label key:(NSString*)key event:(UpdateEvent)event
+{
+    NSString* value = [[self.binding lookupKey:key] description];
+	return [self updateLabel:label value:value event:event];
 }
 
 @end

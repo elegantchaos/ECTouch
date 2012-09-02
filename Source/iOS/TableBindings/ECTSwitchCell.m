@@ -77,13 +77,20 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 
 #pragma mark - ECTSimpleSectionCell methods
 
-- (void)updateUIForEvent:(UpdateEvent)event
+- (BOOL)updateUIForEvent:(UpdateEvent)event
 {
-    NSNumber* value = (NSNumber*) self.binding.value;
-    self.switchControl.on = [value boolValue];
-    self.switchControl.enabled = self.binding.enabled;
-    
-    [super updateUIForEvent:event];
+    BOOL value = [((NSNumber*) self.binding.value) boolValue];
+	BOOL enabled = self.binding.enabled;
+	BOOL changed = (self.switchControl.on != value) || (self.switchControl.enabled != enabled);
+	if (changed)
+	{
+		self.switchControl.on = value;
+		self.switchControl.enabled = enabled;
+	}
+
+    changed = [super updateUIForEvent:event] || changed;
+
+	return changed;
 }
 
 #pragma mark - Actions

@@ -57,10 +57,13 @@ static CGFloat kVerticalInset = 0;
 
 #pragma mark - ECTSimpleSectionCell methods
 
-- (void)updateUIForEvent:(UpdateEvent)event
+- (BOOL)updateUIForEvent:(UpdateEvent)event
 {
     NSString* label = [self.binding label];
+	BOOL changed = ![[self.buttonControl titleForState:UIControlStateNormal] isEqualToString:label];
     [self.buttonControl setTitle:label forState:UIControlStateNormal];
+
+	return changed;
 }
 
 #pragma mark - Internal

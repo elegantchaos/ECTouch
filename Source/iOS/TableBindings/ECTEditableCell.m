@@ -101,12 +101,18 @@ ECDefineLogChannel(ItemCellChannel);
     [super dealloc];
 }
 
-- (void)updateUIForEvent:(UpdateEvent)event
+- (BOOL)updateUIForEvent:(UpdateEvent)event
 {
-    NSString* value = self.binding.value;
-  	self.text.text = [value description];  
-    
-    [super updateUIForEvent:event];
+    NSString* value = [self.binding.value description];
+	BOOL changed = ![self.text.text isEqualToString:value];
+	if (changed)
+	{
+		self.text.text = value;
+	}
+
+    changed = [super updateUIForEvent:event] || changed;
+
+	return changed;
 }
 
 // --------------------------------------------------------------------------
