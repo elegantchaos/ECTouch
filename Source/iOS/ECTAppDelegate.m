@@ -148,19 +148,13 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (void)startupLogging
 {
-    ECLogManager* lm = [ECLogManager sharedInstance];
-	
-	ECLogHandler* nslogHandler = [[ECLogHandlerNSLog alloc] init];
-	[lm registerHandler: nslogHandler];
-	[nslogHandler release];
-    
+    [ECLogManager startupWithHandlerNames:@[
+     @"ECLogHandlerNSLog",
 #if EC_DEBUG
-	ECErrorPresenterHandler* errorPresenterHandler = [[ECErrorPresenterHandler alloc] init];
-	[lm registerHandler: errorPresenterHandler];
-	[errorPresenterHandler release];
+	 @"ECErrorPresenterHandler",
 #endif
-	
-    [lm startup];
+     @"ECLogHandlerFile"
+	 ]];
 }
 
 // --------------------------------------------------------------------------
