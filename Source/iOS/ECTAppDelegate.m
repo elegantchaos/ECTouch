@@ -18,7 +18,6 @@
 - (void)showSplash;
 - (void)hideSplash;
 - (void)hiddenSplash;
-- (void)startupLogging;
 - (void)shutdownLogging;
 @end
 
@@ -58,8 +57,7 @@ ECDefineDebugChannel(ApplicationChannel);
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     ECDebug(ApplicationChannel, @"did finish launching");
-	[self startupLogging];
-	
+
 	ECTModelController* nm = [self newModelController];
 	self.model = nm;
 	[nm startup];
@@ -141,21 +139,6 @@ ECDefineDebugChannel(ApplicationChannel);
 
 
 #pragma mark - Logging
-
-// --------------------------------------------------------------------------
-//! Set up standard logging.
-// --------------------------------------------------------------------------
-
-- (void)startupLogging
-{
-    [ECLogManager startupWithHandlerNames:@[
-     @"ECLogHandlerNSLog",
-#if EC_DEBUG
-	 @"ECErrorPresenterHandler",
-#endif
-     @"ECLogHandlerFile"
-	 ]];
-}
 
 // --------------------------------------------------------------------------
 //! Shut down standard logging.
