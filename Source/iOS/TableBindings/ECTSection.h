@@ -25,18 +25,18 @@ typedef enum
 
 @interface ECTSection : NSObject
 
-@property (nonatomic, retain) NSString* addDisclosureTitle;
-@property (nonatomic, retain) NSString* cellIdentifier;
-@property (nonatomic, retain) NSString* header;
-@property (nonatomic, retain) NSString* footer;
-@property (nonatomic, assign) Class cellClass;
-@property (nonatomic, assign) BOOL canDelete;
-@property (nonatomic, assign) BOOL canMove;
-@property (nonatomic, assign) BOOL canSelect;
-@property (nonatomic, assign) BOOL variableRowHeight;
-@property (nonatomic, assign) ECTSectionDrivenTableController* table;
-@property (nonatomic, retain) NSArray* content;
-@property (nonatomic, retain) ECTBinding* binding;
+@property (strong, nonatomic) NSString* addDisclosureTitle;
+@property (strong, nonatomic) NSString* cellIdentifier;
+@property (strong, nonatomic) NSString* header;
+@property (strong, nonatomic) NSString* footer;
+@property (assign, nonatomic) Class cellClass;
+@property (assign, nonatomic) BOOL canDelete;
+@property (assign, nonatomic) BOOL canMove;
+@property (assign, nonatomic) BOOL canSelect;
+@property (assign, nonatomic) BOOL variableRowHeight;
+@property (assign, nonatomic) ECTSectionDrivenTableController* table;
+@property (strong, nonatomic) NSArray* content;
+@property (strong, nonatomic) ECTBinding* binding;
 
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName;
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArrayAtPath:(NSString*)path object:(id)object;
@@ -76,7 +76,7 @@ typedef enum
 
 @protocol ECTSectionDrivenTableCell <NSObject>
 
-@property (nonatomic, retain) ECTBinding* binding;
+@property (strong, nonatomic) ECTBinding* binding;
 
 + (CGFloat)heightForBinding:(ECTBinding*)binding;
 

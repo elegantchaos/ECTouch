@@ -12,7 +12,7 @@
 @interface ECTStyledLabel : UILabel
 
 @property (nonatomic, copy) NSAttributedString* attributedText;
-@property (nonatomic, retain) IBOutlet UIScrollView* scroller;
-@property (nonatomic, retain) CATextLayer* textLayer;
+@property (strong, nonatomic) IBOutlet UIScrollView* scroller;
+@property (strong, nonatomic) CATextLayer* textLayer;
 
 @end

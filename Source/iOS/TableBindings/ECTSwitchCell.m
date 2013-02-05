@@ -12,7 +12,7 @@
 
 @interface ECTSwitchCell()
 
-@property (nonatomic, retain) UISwitch* switchControl;
+@property (strong, nonatomic) UISwitch* switchControl;
 
 - (IBAction)switched:(id)sender;
 

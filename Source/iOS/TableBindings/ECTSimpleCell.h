@@ -20,10 +20,10 @@ typedef enum
 
 @interface ECTSimpleCell : UITableViewCell<ECTSectionDrivenTableCell>
 
-@property (nonatomic, retain) ECTBinding* binding;
-@property (nonatomic, retain) ECTSection* section;
-@property (nonatomic, assign) BOOL canDelete;
-@property (nonatomic, assign) BOOL canMove;
+@property (strong, nonatomic) ECTBinding* binding;
+@property (strong, nonatomic) ECTSection* section;
+@property (assign, nonatomic) BOOL canDelete;
+@property (assign, nonatomic) BOOL canMove;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier;

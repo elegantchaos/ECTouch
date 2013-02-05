@@ -12,8 +12,8 @@
 
 @interface ECTScrollingStyledLabel : UIView
 
-@property (nonatomic, retain) ECTStyledLabel* label;
-@property (nonatomic, retain) ECTScrollView* scroller;
+@property (strong, nonatomic) ECTStyledLabel* label;
+@property (strong, nonatomic) ECTScrollView* scroller;
 
 - (NSAttributedString*)attributedText;
 - (void)setAttributedText:(NSAttributedString*)text;

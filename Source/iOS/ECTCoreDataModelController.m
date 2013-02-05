@@ -13,9 +13,9 @@
 
 @interface ECTCoreDataModelController()
 
-@property (nonatomic, retain) NSManagedObjectModel* managedObjectModel;
-@property (nonatomic, retain) NSManagedObjectContext* managedObjectContext;
-@property (nonatomic, retain) NSPersistentStoreCoordinator* persistentStoreCoordinator;
+@property (strong, nonatomic) NSManagedObjectModel* managedObjectModel;
+@property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
+@property (strong, nonatomic) NSPersistentStoreCoordinator* persistentStoreCoordinator;
 
 @end
 

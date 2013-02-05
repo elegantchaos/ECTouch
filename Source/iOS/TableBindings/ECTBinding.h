@@ -15,20 +15,20 @@
 
 @interface ECTBinding : NSObject
 
-@property (nonatomic, retain) id object;
-@property (nonatomic, retain) NSMutableDictionary* properties;
-@property (nonatomic, retain) NSMutableDictionary* mappings;
+@property (strong, nonatomic) id object;
+@property (strong, nonatomic) NSMutableDictionary* properties;
+@property (strong, nonatomic) NSMutableDictionary* mappings;
 
-@property (nonatomic, assign) id cellClass;
-@property (nonatomic, assign) BOOL canDelete;
-@property (nonatomic, assign) BOOL canMove;
-@property (nonatomic, assign) BOOL enabled;
-@property (nonatomic, assign) SEL actionSelector;
-@property (nonatomic, assign) NSString* action; // this is deliberately assign, since the actual selector is stored
-@property (nonatomic, assign) id target;
-@property (nonatomic, retain) id value;
-@property (nonatomic, retain, readonly) NSString* label;
-@property (nonatomic, retain, readonly) NSString* detail;
+@property (assign, nonatomic) id cellClass;
+@property (assign, nonatomic) BOOL canDelete;
+@property (assign, nonatomic) BOOL canMove;
+@property (assign, nonatomic) BOOL enabled;
+@property (assign, nonatomic) SEL actionSelector;
+@property (assign, nonatomic) NSString* action; // this is deliberately assign, since the actual selector is stored
+@property (assign, nonatomic) id target;
+@property (strong, nonatomic) id value;
+@property (strong, nonatomic, readonly) NSString* label;
+@property (strong, nonatomic, readonly) NSString* detail;
 
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
 

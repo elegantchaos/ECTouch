@@ -15,8 +15,8 @@
 
 @interface ECTEditableCell()
 
-@property (nonatomic, retain) UIGestureRecognizer* recognizer;
-@property (nonatomic, assign) BOOL tapOutsideDismisses;
+@property (strong, nonatomic) UIGestureRecognizer* recognizer;
+@property (assign, nonatomic) BOOL tapOutsideDismisses;
 
 - (void)textFieldDone:(id)sender;
 - (void)installGesture;

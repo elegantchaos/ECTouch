@@ -11,7 +11,7 @@
 
 @interface ECTEditableCell : ECTSimpleCell<UITextFieldDelegate>
 
-@property (nonatomic, retain) UILabel* label;
-@property (nonatomic, retain) UITextField* text;
+@property (strong, nonatomic) UILabel* label;
+@property (strong, nonatomic) UITextField* text;
 
 @end

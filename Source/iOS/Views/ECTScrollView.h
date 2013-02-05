@@ -13,8 +13,8 @@
 
 @interface ECTScrollView : UIScrollView
 
-@property (nonatomic, assign) BOOL swallowTouches;
-@property (nonatomic, assign) SEL action;
-@property (nonatomic, assign) id target;
+@property (assign, nonatomic) BOOL swallowTouches;
+@property (assign, nonatomic) SEL action;
+@property (assign, nonatomic) id target;
 
 @end

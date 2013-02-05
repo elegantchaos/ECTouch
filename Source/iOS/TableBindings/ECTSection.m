@@ -15,13 +15,13 @@
 
 @interface ECTSection()
 
-@property (nonatomic, retain) id source;
-@property (nonatomic, retain) NSString* sourcePath;
-@property (nonatomic, retain) ECTBinding* addCell;
-@property (nonatomic, retain) NSDictionary* sectionProperties;
-@property (nonatomic, retain) NSDictionary* everyRowProperties;
-@property (nonatomic, retain) NSArray* individualRowProperties;
-@property (nonatomic, assign) BOOL sourceChangedInternally;
+@property (strong, nonatomic) id source;
+@property (strong, nonatomic) NSString* sourcePath;
+@property (strong, nonatomic) ECTBinding* addCell;
+@property (strong, nonatomic) NSDictionary* sectionProperties;
+@property (strong, nonatomic) NSDictionary* everyRowProperties;
+@property (strong, nonatomic) NSArray* individualRowProperties;
+@property (assign, nonatomic) BOOL sourceChangedInternally;
 
 - (void)bindArray:(NSArray*)array;
 - (void)cleanupObservers;

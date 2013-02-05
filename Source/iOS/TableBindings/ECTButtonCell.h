@@ -15,7 +15,7 @@
 
 @interface ECTButtonCell : ECTSimpleCell
 
-@property (nonatomic, retain) UIButton* buttonControl;
+@property (strong, nonatomic) UIButton* buttonControl;
 
 - (UIButtonType)buttonType;
 

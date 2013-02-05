@@ -15,8 +15,8 @@
 
 @interface ECTSectionDrivenTableController()
 
-@property (nonatomic, assign) BOOL editable;
-@property (nonatomic, retain, readwrite) NSMutableArray* sections;
+@property (assign, nonatomic) BOOL editable;
+@property (strong, nonatomic, readwrite) NSMutableArray* sections;
 
 - (ECTSection*)sectionForIndex:(NSUInteger)index;
 - (ECTSection*)sectionForIndexPath:(NSIndexPath*)indexPath;
