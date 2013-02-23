@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0450"
+   LastUpgradeVersion = "0460"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "NO"
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "227A47B915DA5FA000281601"
-               BuildableName = "ECUnitTests.framework"
+               BuildableName = ".bundle"
                BlueprintName = "ECUnitTestsIOS"
                ReferencedContainer = "container:../ECUnitTests/ECUnitTests.xcodeproj">
             </BuildableReference>

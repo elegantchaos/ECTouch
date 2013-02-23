@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------
 
 /// Standard xcconfig files.
-/// The use of a relative path here relies on ECConfig being in a known location. See <ImportNote> in the documentation for more details.
+/// The use of a relative path here relies on ECLogging being in a known location. See <ImportNote> in the documentation for more details.
 
-#include "../ECConfig/Source/Configuration/ECIOSRelease.xcconfig"
-#include "../ECConfig/Source/Configuration/ECPseudoFramework.xcconfig"
+#include "../ECLogging/Source/Configuration/ECIOSRelease.xcconfig"
+#include "../ECLogging/Source/Configuration/ECPseudoFramework.xcconfig"

@@ -669,7 +669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${ECCONFIG_SCRIPTS_PATH}/package-pseudo-framework.sh\"";
+			shellScript = "\"${ECLOGGING_SCRIPTS_PATH}/package-pseudo-framework.sh\"";
 			showEnvVarsInLog = 0;
 		};
 		2274B38B14F56896003B8A0B /* ShellScript */ = {
