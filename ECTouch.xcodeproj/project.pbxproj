@@ -191,7 +191,7 @@
 		22602238141F8A460044644C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
-		2274B37814F56679003B8A0B /* ECLoggingTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECLoggingTests.plist; sourceTree = "<group>"; };
+		2274B37814F56679003B8A0B /* ECTouchTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECTouchTests.plist; sourceTree = "<group>"; };
 		2274B38D14F56896003B8A0B /* ECTouchIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECTouchIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274B38F14F56896003B8A0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2283A3BB14F52E93009142F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -473,7 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				2251BA6C15DBDA5100F2FE40 /* Info.plist */,
-				2274B37814F56679003B8A0B /* ECLoggingTests.plist */,
+				2274B37814F56679003B8A0B /* ECTouchTests.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
