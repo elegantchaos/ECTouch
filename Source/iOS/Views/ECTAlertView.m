@@ -28,13 +28,16 @@ static NSMutableSet* gAlertsInFlight;
     if ((self = [super init]) != nil)
     {
         UIAlertView* av = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
-        va_list args;
-        va_start(args, otherButtonTitles);
-        for (id title = va_arg(args, id); title != nil;)
-        {
-            [av addButtonWithTitle:title];
-        }
-        va_end(args);
+		if (otherButtonTitles)
+		{
+			va_list args;
+			va_start(args, otherButtonTitles);
+			for (id title = va_arg(args, id); title != nil;)
+			{
+				[av addButtonWithTitle:title];
+			}
+			va_end(args);
+		}
 
         self.alert = av;
         [av release];
