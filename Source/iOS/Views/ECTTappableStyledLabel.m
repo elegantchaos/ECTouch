@@ -141,7 +141,7 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
         CTLineRef line = CTTypesetterCreateLine(typesetter, CFRangeMake(offset, length));
         
         CGFloat ascent, descent, leading;
-        CGFloat lineWidth = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+        CGFloat lineWidth = (CGFloat) CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
         
         CGRect lineFrame = CGRectMake(0, y, lineWidth, ascent + descent + leading);
         BOOL inLine = CGRectContainsPoint(lineFrame, point);

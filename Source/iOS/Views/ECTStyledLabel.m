@@ -132,7 +132,7 @@ ECDefineDebugChannel(StyledLabelChannel);
     
     CFRelease(typesetter);
     
-    return CGSizeMake(width, ceil(y));
+    return CGSizeMake(width, (CGFloat) ceil(y));
 }
 
 - (void)sizeToFit

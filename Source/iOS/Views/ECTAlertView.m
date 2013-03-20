@@ -32,9 +32,9 @@ static NSMutableSet* gAlertsInFlight;
 		{
 			va_list args;
 			va_start(args, otherButtonTitles);
-			for (id title = va_arg(args, id); title != nil;)
+			for (id buttonTitle = va_arg(args, id); buttonTitle != nil;)
 			{
-				[av addButtonWithTitle:title];
+				[av addButtonWithTitle:buttonTitle];
 			}
 			va_end(args);
 		}
