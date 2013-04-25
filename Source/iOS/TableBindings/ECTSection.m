@@ -265,6 +265,9 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     [self addContent:object atIndex:[self.content count] properties:nil];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
+
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties
 {
     [[self mutableSource] addObject:object];
@@ -272,6 +275,8 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     [combined setObject:key forKey:ECTValueKey];
     [self addContent:object atIndex:[self.content count] properties:combined];
 }
+
+#pragma clang diagnostic pop
 
 - (void)makeAddableWithObject:(id)object properties:(NSDictionary*)properties
 {
