@@ -67,11 +67,10 @@
 	CGPoint newCenter = savedCenter;
 	newCenter.y += self.bounds.size.height;
 	self.center = newCenter;
-	
-	[UIView beginAnimations:@"AnimateSlide" context:NULL];
-	[UIView setAnimationDuration:1.0];
-	self.center = savedCenter;
-	[UIView commitAnimations];
+
+	[UIView animateWithDuration:1.0 animations:^{
+		self.center = savedCenter;
+	}];
 }
 
 @end
