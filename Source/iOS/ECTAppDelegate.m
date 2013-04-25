@@ -195,10 +195,11 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (void)hideSplash
 {
-    [UIView beginAnimations:@"fade out splash" context:nil];
-    [UIView setAnimationDidStopSelector:@selector(hiddenSplash)];
-    self.splash.alpha = 0.0;
-    [UIView commitAnimations];
+	UIView* splash = self.splash;
+	[UIView animateWithDuration:1.0 animations:^
+	{
+		splash.alpha = 0.0;
+	}];
     self.splash = nil;
 }
 
