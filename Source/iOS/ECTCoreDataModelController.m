@@ -21,16 +21,13 @@
 
 @implementation ECTCoreDataModelController
 
-@synthesize managedObjectModel;
-@synthesize managedObjectContext;
-@synthesize persistentStoreCoordinator;
-
 - (void)dealloc
 {
-    [managedObjectModel release];
-	[managedObjectContext release];
-	[persistentStoreCoordinator release];
-    
+    [_managedObjectModel release];
+	[_managedObjectContext release];
+	[_persistentStoreCoordinator release];
+    [_sorts release];
+	
     [super dealloc];
 }
 
@@ -121,14 +118,15 @@
     return result;
 }
 
-- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSArray*)sort
+- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSString *)sort
 {
+	NSArray* sortDescriptors = self.sorts[sort];
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:entity];
-    [request setPredicate:predicate];
-	[request setSortDescriptors:sort];
+    request.entity = entity;
+    request.predicate = predicate;
+	request.sortDescriptors = sortDescriptors;
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
     [request release];
 
@@ -149,7 +147,42 @@
     return result;
 }
 
-- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSArray*)sort
+- (NSManagedObject*)firstEntityForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSString *)sort
+{
+	NSArray* sortDescriptors = self.sorts[sort];
+    NSError* error = nil;
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    request.entity = entity;
+    request.predicate = predicate;
+	request.sortDescriptors = sortDescriptors;
+	request.fetchLimit = 1;
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    [request release];
+
+	if (result)
+    {
+        ECDebug(ModelChannel, @"retrieved %d %@ entities", [result count], entityName);
+	}
+	else
+	{
+        ECDebug(ModelChannel, @"couldn't get %@ entities, error: @%", entityName, error);
+    }
+
+	if (predicate)
+	{
+		ECDebug(ModelChannel, @"predicate was %@", predicate);
+	}
+
+    return [result firstObjectOrNil];
+}
+
+- (NSManagedObject*)firstEntityForName:(NSString*)entityName sort:(NSString *)sort
+{
+	return [self firstEntityForName:entityName predicate:nil sort:sort];
+}
+
+- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSString *)sort
 {
 	return [self allEntitiesForName:entityName predicate:nil sort:sort];
 }

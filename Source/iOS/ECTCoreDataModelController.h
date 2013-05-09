@@ -20,6 +20,7 @@
 @property (strong, nonatomic, readonly) NSManagedObjectModel* managedObjectModel;
 @property (strong, nonatomic, readonly) NSManagedObjectContext* managedObjectContext;
 @property (strong, nonatomic, readonly) NSPersistentStoreCoordinator* persistentStoreCoordinator;
+@property (strong, nonatomic) NSDictionary* sorts;
 
 - (void)startupCoreData;
 - (void)shutdownCoreData;
@@ -28,8 +29,10 @@
 
 - (id)findEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value;
 - (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound;
-- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSArray*)sort;
-- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSArray*)sort;
+- (NSArray*)allEntitiesForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSString*)sort;
+- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSString*)sort;
+- (NSManagedObject*)firstEntityForName:(NSString*)entityName predicate:(NSPredicate*)predicate sort:(NSString *)sort;
+- (NSManagedObject*)firstEntityForName:(NSString*)entityName sort:(NSString *)sort;
 - (void)deleteAllEntitiesForName:(NSString*)entityName;
 
 @end
