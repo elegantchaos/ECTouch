@@ -148,6 +148,7 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
             CGPoint relativePoint = CGPointMake(point.x, (point.y - y) - ascent);
             ECDebug(ECTappableStyledLabelChannel, @"relative point %@", NSStringFromCGPoint(relativePoint));
             CFIndex index = CTLineGetStringIndexForPosition(line, relativePoint);
+            CFRelease(line);
             ECDebug(ECTappableStyledLabelChannel, @"index %ld", index);
             result = [string attributesAtIndex:index effectiveRange:nil];
             if (indexOut)
@@ -156,8 +157,10 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
             }
             break;
         }
-
-        CFRelease(line);
+        else
+        {
+            CFRelease(line);
+        }
         
         offset += length;
         y += ascent + descent + leading;
