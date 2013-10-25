@@ -48,13 +48,6 @@ static CGFloat kVerticalInset = 0;
     return self;
 }
 
-- (void)dealloc
-{
-    [buttonControl release];
-    
-    [super dealloc];
-}
-
 #pragma mark - ECTSimpleSectionCell methods
 
 - (BOOL)updateUIForEvent:(UpdateEvent)event

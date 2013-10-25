@@ -25,13 +25,6 @@
 
 EC_SYNTHESIZE_SINGLETON(ECTPopoverController);
 
-- (void)dealloc
-{
-    [showing release];
-    
-    [super dealloc];
-}
-
 - (BOOL)isShowingPopover
 {
     return self.showing != nil;
@@ -75,9 +68,8 @@ EC_SYNTHESIZE_SINGLETON(ECTPopoverController);
         }
     }
     [result setPopoverContentSize:contentController.view.frame.size animated:NO];
-    [contentController release];
 
-    return [result autorelease];
+    return result;
 }
 
 - (void)presentPopoverWithContentClass:(NSString*)name content:(id)content fromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated

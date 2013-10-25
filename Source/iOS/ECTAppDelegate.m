@@ -15,17 +15,9 @@
 
 @property (strong, nonatomic) UIImageView* splash;
 
-- (void)showSplash;
-- (void)hideSplash;
-- (void)hiddenSplash;
-- (void)shutdownLogging;
 @end
 
 @implementation ECTAppDelegate
-
-@synthesize model = _model;
-@synthesize splash = _splash;
-@synthesize window = _window;
 
 ECDefineDebugChannel(ApplicationChannel);
 
@@ -36,18 +28,6 @@ ECDefineDebugChannel(ApplicationChannel);
 + (id)sharedInstance
 {
 	return [UIApplication sharedApplication].delegate;
-}
-
-// --------------------------------------------------------------------------
-//! Clean up.
-// --------------------------------------------------------------------------
-
-- (void)dealloc 
-{
-    [_model release];
-    [_window release];
-	
-    [super dealloc];
 }
 
 // --------------------------------------------------------------------------
@@ -62,16 +42,13 @@ ECDefineDebugChannel(ApplicationChannel);
 	self.model = nm;
 	[nm startup];
 	[nm load];
-	[nm release];
 
 	UIViewController* nrvc = [self newRootViewController];
 	UIWindow* nw = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window = nw;
 	nw.rootViewController = nrvc;
 	[nw makeKeyAndVisible];
-	[nrvc release];
-	[nw release];
-	
+
 	[self showSplash];
 	
 	return YES;
@@ -189,7 +166,6 @@ ECDefineDebugChannel(ApplicationChannel);
 		[self.window.rootViewController.view addSubview:iv];
 		[self performSelector:@selector(hideSplash) withObject:nil afterDelay:0.0];
 		self.splash = iv;
-		[iv release];
 	}
 }
 

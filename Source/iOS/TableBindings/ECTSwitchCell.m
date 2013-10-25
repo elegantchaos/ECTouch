@@ -38,17 +38,9 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
         [view addTarget:self action:@selector(switched:) forControlEvents:UIControlEventValueChanged];
         self.accessoryView = view;
         self.switchControl = view;
-        [view release];
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [switchControl release];
-    
-    [super dealloc];
 }
 
 #pragma mark - UITableViewCell

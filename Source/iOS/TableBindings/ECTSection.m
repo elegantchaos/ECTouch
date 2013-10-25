@@ -23,10 +23,6 @@
 @property (strong, nonatomic) NSArray* individualRowProperties;
 @property (assign, nonatomic) BOOL sourceChangedInternally;
 
-- (void)bindArray:(NSArray*)array;
-- (void)cleanupObservers;
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
-
 @end
 
 @implementation ECTSection
@@ -34,29 +30,6 @@
 #pragma mark - Debug Channels
 
 ECDefineDebugChannel(ECTSectionControllerChannel);
-
-#pragma mark - Properties
-
-@synthesize addCell;
-@synthesize addDisclosureTitle;
-@synthesize binding;
-@synthesize content;
-@synthesize canDelete;
-@synthesize canMove;
-@synthesize canSelect;
-@synthesize cellIdentifier;
-@synthesize footer;
-@synthesize header;
-@synthesize cellClass;
-@synthesize source;
-@synthesize sourcePath;
-@synthesize sourceChangedInternally;
-@synthesize table;
-@synthesize variableRowHeight;
-
-@synthesize sectionProperties;
-@synthesize everyRowProperties;
-@synthesize individualRowProperties;
 
 #pragma mark - Constants
 
@@ -87,7 +60,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
         [section makeAddableWithObject:label properties:addRow];
     }
 
-    return [section autorelease];
+    return section;
 }
 
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArrayAtPath:(NSString *)path object:(id)object
@@ -123,17 +96,6 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 - (void)dealloc
 {
     [self cleanupObservers];
-
-    [addCell release];
-    [binding release];
-    [cellIdentifier release];
-    [content release];
-    [header release];
-    [footer release];
-    [source release];
-    [sourcePath release];
-    
-    [super dealloc];
 }
 
 #pragma mark - Utilities
@@ -183,15 +145,14 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 		if (index < individualCount)
 		{
 			NSMutableDictionary* merged = [NSMutableDictionary dictionaryWithDictionary:properties];
-			[merged addEntriesFromDictionary:[individualRowProperties objectAtIndex:index]];
+			[merged addEntriesFromDictionary:[self.individualRowProperties objectAtIndex:index]];
 			properties = merged;
 		}
 		
         ECTBinding* item = [[ECTBinding alloc] initWithObject:object];
         [item setValuesForKeysWithDictionary:properties];
         [controllers addObject:item];
-        [item release];
-		
+
 		++index;
     }
     
@@ -354,7 +315,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     if (cell == nil) 
     {
         Class class = [ECCoercion asClass:rowBinding.cellClass];
-        cell = [[[class alloc] initWithReuseIdentifier:identifier] autorelease];
+        cell = [[class alloc] initWithReuseIdentifier:identifier];
     }
     
     [cell setupForBinding:rowBinding section:self];
@@ -398,7 +359,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     
     ECDebug(ECTSectionControllerChannel, @"made disclosure view of class %@ for path %@", nib, indexPath);
     
-    return [view autorelease];
+    return view;
 }
 
 - (Class)disclosureClassForBinding:(ECTBinding*)rowBinding detail:(BOOL)detail
@@ -502,7 +463,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (!sourceChangedInternally && [keyPath isEqualToString:self.sourcePath])
+    if (!self.sourceChangedInternally && [keyPath isEqualToString:self.sourcePath])
     {
         NSKeyValueChange kind = [[change objectForKey:NSKeyValueChangeKindKey] intValue];
         NSIndexSet* indexes = [change objectForKey:NSKeyValueChangeIndexesKey];

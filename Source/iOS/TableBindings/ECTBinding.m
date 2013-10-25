@@ -28,17 +28,6 @@
 
 ECDefineDebugChannel(ECTBindingChannel);
 
-#pragma mark - Properties
-
-@synthesize actionSelector;
-@synthesize canDelete;
-@synthesize canMove;
-@synthesize cellClass;
-@synthesize enabled;
-@synthesize mappings;
-@synthesize object;
-@synthesize properties;
-@synthesize target;
 
 #pragma mark - Object lifecycle
 
@@ -47,7 +36,7 @@ ECDefineDebugChannel(ECTBindingChannel);
     ECTBinding* controller = [[self alloc] initWithObject:object];
     [controller setValuesForKeysWithDictionary:properties];
 
-    return [controller autorelease];
+    return controller;
 }
 
 - (id)initWithObject:(id)objectIn
@@ -62,16 +51,8 @@ ECDefineDebugChannel(ECTBindingChannel);
     return self;
 }
 
-- (void)dealloc
-{
-    [mappings release];
-    [object release];
-    [properties release];
-    
-    [super dealloc];
-}
-
 #pragma mark - Utilities
+
 - (id)valueForUndefinedKey:(NSString *)undefinedKey
 {
     return [self.properties objectForKey:undefinedKey];
@@ -133,7 +114,7 @@ ECDefineDebugChannel(ECTBindingChannel);
 		}
 		@catch (NSException* exception)
 		{
-			ECDebug(ECTBindingChannel, @"object %@ doesn't support key path %@", object, key);
+			ECDebug(ECTBindingChannel, @"object %@ doesn't support key path %@", self.object, key);
 		}
     }
     
@@ -208,7 +189,7 @@ ECDefineDebugChannel(ECTBindingChannel);
     for (NSString* key in self.mappings)
     {
         NSString* mappedKey = [self.mappings objectForKey:key];
-        [self.object addObserver:observer forKeyPath:mappedKey options:options context:self];
+        [self.object addObserver:observer forKeyPath:mappedKey options:options context:(__bridge void*)self];
     }
 }
 
@@ -268,7 +249,6 @@ ECDefineDebugChannel(ECTBindingChannel);
 	{
 		UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:back style:UIBarButtonItemStylePlain target:nil action:nil];
 		navigation.topViewController.navigationItem.backBarButtonItem = backButton;
-		[backButton release];
 	}
 	[navigation pushViewController:view animated:YES];
 	ECDebug(ECTBindingChannel, @"pushed %@ into navigation stack for %@", view, navigation);	

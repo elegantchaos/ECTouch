@@ -40,25 +40,15 @@ static NSMutableSet* gAlertsInFlight;
 		}
 
         self.alert = av;
-        [av release];
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [alert release];
-    [handler release];
-
-    [super dealloc];
 }
 
 - (void)showWithHandler:(AlertHandler)handlerIn
 {
     AlertHandler hc = [handlerIn copy];
     self.handler = hc;
-    [hc release];
 
     if (!gAlertsInFlight)
     {
@@ -79,7 +69,6 @@ static NSMutableSet* gAlertsInFlight;
     // clean up the in flight set if that was the last alert
     if ([gAlertsInFlight count] == 0)
     {
-        [gAlertsInFlight release];
         gAlertsInFlight = nil;
     }
 }
