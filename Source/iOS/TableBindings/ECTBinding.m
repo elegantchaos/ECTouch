@@ -108,7 +108,8 @@ ECDefineDebugChannel(ECTBindingChannel);
 		{
 			key = keyIn;
 		}
-		@try 
+
+		@try
 		{
             result = [self.object valueForKeyPath:key];
 		}
