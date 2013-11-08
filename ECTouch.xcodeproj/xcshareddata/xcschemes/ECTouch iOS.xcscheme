@@ -103,7 +103,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2274B38C14F56896003B8A0B"
-               BuildableName = "ECTouchIOSTests.octest"
+               BuildableName = "ECTouchIOSTests.xctest"
                BlueprintName = "ECTouchIOSTests"
                ReferencedContainer = "container:ECTouch.xcodeproj">
             </BuildableReference>
