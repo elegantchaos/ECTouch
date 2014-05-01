@@ -18,8 +18,8 @@
 
 - (void) addCAGradient
 {
-	self.topColour = [UIColor colorWithRed: 0.53 green: 0.53 blue: 0.53 alpha: 1.0];
-	self.bottomColour = [UIColor colorWithRed: 0.64 green: 0.64 blue: 0.64 alpha: 1.0];
+	self.topColour = [UIColor colorWithRed: 0.53f green: 0.53f blue: 0.53f alpha: 1.0f];
+	self.bottomColour = [UIColor colorWithRed: 0.64f green: 0.64f blue: 0.64f alpha: 1.0f];
 
 	CAGradientLayer* gradient = [CAGradientLayer layer];
 	[gradient setBounds:[self bounds]];
