@@ -13,15 +13,11 @@
 
 @implementation ECGradientView
 
-@synthesize topColour = _topColour;
-@synthesize bottomColour = _bottomColour;
-@synthesize gradient = _gradient;
-
 - (void) addCAGradient
 {
 	self.topColour = [UIColor whiteColor];
 	self.bottomColour = [UIColor blackColor];
-	
+
 	CAGradientLayer* gradient = [CAGradientLayer layer];
 	gradient.frame = self.bounds;
 	[self.layer insertSublayer:gradient atIndex:0];
@@ -40,7 +36,7 @@
 	{
 		[self addCAGradient];
 	}
-	
+
 	return self;
 }
 
@@ -50,16 +46,9 @@
 	{
 		[self addCAGradient];
 	}
-	
+
 	return self;
 }
-
- - (void) dealloc
- {
-	 [_gradient release];
-	 
-	 [super dealloc];
- }
 
 - (void) slideIn
 {

@@ -51,24 +51,14 @@
     [self makeSubviews];
 }
 
-- (void)dealloc 
-{
-    [label release];
-    [scroller release];
-    
-    [super dealloc];
-}
-
 - (void)makeSubviews
 {
     ECTScrollView* sv = [[ECTScrollView alloc] initWithFrame:self.frame];
     self.scroller = sv;
-    [sv release];
-    
+
     ECTStyledLabel* sl = [[ECTStyledLabel alloc] initWithFrame:self.frame];
     self.label = sl;
 	sl.scroller = sv;
-    [sl release];
    
     [sv addSubview:sl];
 }

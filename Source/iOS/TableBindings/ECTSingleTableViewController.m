@@ -15,19 +15,6 @@
 
 @implementation ECTSingleTableViewController
 
-#pragma mark - Properties
-
-@synthesize table;
-
-#pragma mark - Object Lifecycle
-
-- (void)dealloc 
-{
-    [table release];
-    
-    [super dealloc];
-}
-
 #pragma mark - View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated

@@ -21,16 +21,6 @@
 
 @implementation ECTCoreDataModelController
 
-- (void)dealloc
-{
-    [_managedObjectModel release];
-	[_managedObjectContext release];
-	[_persistentStoreCoordinator release];
-    [_sorts release];
-	
-    [super dealloc];
-}
-
 - (void)startup
 {
 	[super startup];
@@ -68,9 +58,7 @@
         [moc setPersistentStoreCoordinator:psc];
         self.persistentStoreCoordinator = psc;
         self.managedObjectContext = moc;
-        [moc release];
     }
-    [psc release];
 }
 
 - (void)shutdownCoreData
@@ -89,8 +77,7 @@
     [request setPredicate:predicate];
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:&error];
     NSManagedObject* result = [fetchedObjects firstObjectOrNil];
-    [request release];
-    
+
     return result;
 }
 
@@ -128,7 +115,6 @@
     request.predicate = predicate;
 	request.sortDescriptors = sortDescriptors;
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
-    [request release];
 
 	if (result)
     {
@@ -158,7 +144,6 @@
 	request.sortDescriptors = sortDescriptors;
 	request.fetchLimit = 1;
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
-    [request release];
 
 	if (result)
     {
@@ -195,7 +180,6 @@
 	
 	NSError* error = nil;
 	NSArray* objects = [self.managedObjectContext executeFetchRequest:request error:&error];
-	[request release];
 
 	if (objects)
 	{

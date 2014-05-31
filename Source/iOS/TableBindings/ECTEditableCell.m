@@ -96,9 +96,6 @@ ECDefineLogChannel(ItemCellChannel);
 - (void)dealloc
 {
     [self removeGesture];
-    [recognizer release];
-    
-    [super dealloc];
 }
 
 - (BOOL)updateUIForEvent:(UpdateEvent)event
@@ -163,7 +160,6 @@ ECDefineLogChannel(ItemCellChannel);
         UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldDone:)];
         [self.superview.superview.superview addGestureRecognizer:tap];
         self.recognizer = tap;
-        [tap release];
     }
 }
 

@@ -57,28 +57,20 @@ ECDefineDebugChannel(StyledLabelChannel);
     //    [self setTestText];
 }
 
-- (void)dealloc 
-{
-    [scroller release];
-    [textLayer release];
-    
-    [super dealloc];
-}
 
 - (void)setTestText
 {
 	CTFontRef font = CTFontCreateWithName((CFStringRef) self.font.fontName, self.font.pointSize, NULL);
     NSDictionary* attributes = 
     [NSDictionary dictionaryWithObjectsAndKeys:
-     (id) font, (id) kCTFontAttributeName,
-     (id) self.textColor.CGColor, (id)kCTForegroundColorAttributeName,
+     (__bridge id) font, (__bridge id) kCTFontAttributeName,
+     (__bridge id) self.textColor.CGColor, (__bridge id)kCTForegroundColorAttributeName,
      nil
      ];
   	CFRelease(font);
     
 	NSMutableAttributedString* styled = [[NSMutableAttributedString alloc] initWithString:self.text attributes:attributes];
     self.textLayer.string = styled;
-    [styled release];
 }
 
 - (void)makeTextLayer
@@ -86,7 +78,6 @@ ECDefineDebugChannel(StyledLabelChannel);
     CATextLayer* text = [[CATextLayer alloc] init];
     [self.layer addSublayer:text];
     self.textLayer = text;
-    [text release];
 
 	CTFontRef font = CTFontCreateWithName((CFStringRef) self.font.fontName, self.font.pointSize, NULL);
 

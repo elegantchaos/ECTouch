@@ -50,15 +50,6 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     return self;
 }
 
-
-- (void)dealloc
-{
-    [representedObject release];
-    [sections release];
-    
-    [super dealloc];
-}
-
 #pragma mark - UIViewController
 
 - (void)viewDidAppear:(BOOL)animated

@@ -9,6 +9,8 @@
 
 #import "ECTScrollView.h"
 
+#import <objc/message.h>
+
 #pragma mark - Constants
 
 
@@ -37,7 +39,7 @@ ECDefineDebugChannel(ECTScrollViewChannel);
         // perform custom action?
         if (self.target && self.action)
         {
-            [self.target performSelector:self.action withObject:event];
+            objc_msgSend(self.target, self.action, event);
         }
     }
     

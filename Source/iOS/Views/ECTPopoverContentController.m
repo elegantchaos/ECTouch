@@ -11,26 +11,8 @@
 
 @implementation ECTPopoverContentControllerBase
 
-@synthesize popover;
-
-- (void)dealloc
-{
-    [popover release];
-    
-    [super dealloc];
-}
-
 @end
 
 @implementation ECTPopoverContentControllerTable
-
-@synthesize popover;
-
-- (void)dealloc
-{
-    [popover release];
-    
-    [super dealloc];
-}
 
 @end

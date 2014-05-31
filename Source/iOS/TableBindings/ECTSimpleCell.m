@@ -27,11 +27,6 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 #pragma mark - Properties
 
-@synthesize canDelete;
-@synthesize canMove;
-@synthesize binding; // TODO should this be a weak link?
-@synthesize section;
-
 #pragma mark - Object lifecycle
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -52,9 +47,6 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 - (void)dealloc
 {
     [self removeBinding];
-    [section release];
-    
-    [super dealloc];
 }
 
 - (void)removeBinding
@@ -102,8 +94,8 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     self.imageView.image = image;
     
     // get text to use for value and detail labels
-    NSString* mainLabel = [binding label];
-    NSString* detailLabel = [binding detail];
+    NSString* mainLabel = [self.binding label];
+    NSString* detailLabel = [self.binding detail];
 
     // if detail and value map to the same thing, don't show detail
 	if (detailLabel == mainLabel)
@@ -111,10 +103,10 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
         detailLabel = nil;
     }
     
-    self.canMove = [binding canMove];
-    self.canDelete = [binding canDelete];
+    self.canMove = [self.binding canMove];
+    self.canDelete = [self.binding canDelete];
     
-    self.selectionStyle = binding.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
+    self.selectionStyle = self.binding.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
 
     BOOL changed = [self updateMainLabel:mainLabel event:event];
     if (detailLabel)
@@ -200,7 +192,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context == self.binding)
+    if (context == (__bridge void*)self.binding)
     {
         [self updateAndLayoutUIForEvent:ValueChanged];
     }

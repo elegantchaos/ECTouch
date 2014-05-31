@@ -67,7 +67,6 @@
 		2204C89815E29E0E00F71E15 /* ECTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = 2204C89715E29E0E00F71E15 /* ECTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22339C3915DEC1C60017BC6B /* ECTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */; };
 		22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2251BBA615DC18ED00F2FE40 /* ECUnitTests.framework */; };
-		2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3CD14F52E93009142F7 /* SenTestingKit.framework */; };
 		2274B39014F56896003B8A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274B38F14F56896003B8A0B /* UIKit.framework */; };
 		2274B39114F56896003B8A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237ECE314F5644C00085BF5 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -192,13 +191,12 @@
 		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2274B37814F56679003B8A0B /* ECTouchTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECTouchTests.plist; sourceTree = "<group>"; };
-		2274B38D14F56896003B8A0B /* ECTouchIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECTouchIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2274B38D14F56896003B8A0B /* ECTouchIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECTouchIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274B38F14F56896003B8A0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2283A3BB14F52E93009142F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2283A3BE14F52E93009142F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		2283A3BF14F52E93009142F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2283A3C014F52E93009142F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2283A3CD14F52E93009142F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2283A4CB14F53C6F009142F7 /* ECTouchShared.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchShared.pch; sourceTree = "<group>"; };
 		22970D3C14F5AA80007B254B /* ECTouchDebug.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchDebug.pch; sourceTree = "<group>"; };
 		22970D3D14F5AA80007B254B /* ECTouchRelease.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchRelease.pch; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 			files = (
 				22339C3A15DEC1E30017BC6B /* ECUnitTests.framework in Frameworks */,
 				22339C3915DEC1C60017BC6B /* ECTouch.framework in Frameworks */,
-				2274B38E14F56896003B8A0B /* SenTestingKit.framework in Frameworks */,
 				2274B39014F56896003B8A0B /* UIKit.framework in Frameworks */,
 				2274B39114F56896003B8A0B /* Foundation.framework in Frameworks */,
 			);
@@ -235,7 +232,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2274B38D14F56896003B8A0B /* ECTouchIOSTests.octest */,
+				2274B38D14F56896003B8A0B /* ECTouchIOSTests.xctest */,
 				2251BA1215DBCC4A00F2FE40 /* ECTouch.framework */,
 			);
 			name = Products;
@@ -250,9 +247,11 @@
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
+			indentWidth = 4;
 			name = ECFoundation;
 			sourceTree = "<group>";
-			usesTabs = 1;
+			tabWidth = 4;
+			usesTabs = 0;
 		};
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -265,7 +264,6 @@
 				1058C7B0FEA5585E11CA2CBB /* MacOS */,
 				1058C7B2FEA5585E11CA2CBB /* Testing */,
 				2283A3BB14F52E93009142F7 /* Cocoa.framework */,
-				2283A3CD14F52E93009142F7 /* SenTestingKit.framework */,
 				2237ECE314F5644C00085BF5 /* Foundation.framework */,
 				2274B38F14F56896003B8A0B /* UIKit.framework */,
 				2251BA1315DBCC4A00F2FE40 /* CoreFoundation.framework */,
@@ -604,7 +602,7 @@
 			);
 			name = ECTouchIOSTests;
 			productName = blahTests;
-			productReference = 2274B38D14F56896003B8A0B /* ECTouchIOSTests.octest */;
+			productReference = 2274B38D14F56896003B8A0B /* ECTouchIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -613,6 +611,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Elegant Chaos";
 			};

@@ -17,19 +17,6 @@
 
 @implementation ECTTabbedTableViewController
 
-@synthesize controllers;
-@synthesize table;
-@synthesize tabs;
-
-- (void)dealloc
-{
-    [controllers release];
-    [table release];
-    [tabs release];
-    
-    [super dealloc];
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];

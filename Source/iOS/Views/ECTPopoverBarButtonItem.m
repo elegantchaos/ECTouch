@@ -33,13 +33,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [content release];
-    
-    [super dealloc];
-}
-
 - (IBAction)togglePopover:(id)sender
 {
     ECTPopoverController* pc = [ECTPopoverController sharedInstance];
