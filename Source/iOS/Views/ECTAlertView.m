@@ -64,13 +64,16 @@ static NSMutableSet* gAlertsInFlight;
     self.handler(buttonIndex);
     self.alert = nil;
     self.handler = nil;
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
     [gAlertsInFlight removeObject:self];
-    
     // clean up the in flight set if that was the last alert
     if ([gAlertsInFlight count] == 0)
     {
         gAlertsInFlight = nil;
     }
-}
+}// after animation
 
 @end
