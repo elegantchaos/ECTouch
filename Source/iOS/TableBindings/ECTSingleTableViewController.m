@@ -22,11 +22,5 @@
     [super viewWillAppear:animated];
     self.table.navigator = self.navigationController;
 }
-- (void)viewDidUnload
-{   
-    self.table = nil;
-    
-    [super viewDidUnload];
-}
 
 @end

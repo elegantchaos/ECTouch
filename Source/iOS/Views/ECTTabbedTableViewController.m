@@ -17,13 +17,6 @@
 
 @implementation ECTTabbedTableViewController
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    self.table = nil;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
