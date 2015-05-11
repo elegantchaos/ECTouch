@@ -31,6 +31,17 @@ ECDefineDebugChannel(ApplicationChannel);
 }
 
 // --------------------------------------------------------------------------
+//! Set up the app before launching.
+// --------------------------------------------------------------------------
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    ECDebug(ApplicationChannel, @"will finish launching");
+
+    return YES;
+}
+
+// --------------------------------------------------------------------------
 //! Set up the app after launching.
 // --------------------------------------------------------------------------
 
