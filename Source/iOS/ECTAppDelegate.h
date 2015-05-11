@@ -15,7 +15,7 @@
 @property (strong, nonatomic) id model;
 @property (strong, nonatomic) UIWindow* window;
 
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 
 - (id)newModelController;
 - (UIViewController*)newRootViewController;
