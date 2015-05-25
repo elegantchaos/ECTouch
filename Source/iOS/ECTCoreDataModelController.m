@@ -62,7 +62,7 @@
 		NSError* error = nil;
 		NSURL* dataURL = [[NSFileManager defaultManager] URLForApplicationDataPath:@"data"];
 		NSURL* storeUrl = [dataURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@-v%@.sqllite", name, version]];
-		BOOL ok = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error];
+		BOOL ok = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error] != nil;
 		ECModelControllerStartupCallbackBlock startupCallback = self.startupBlock;
 		if (startupCallback)
 			startupCallback(ok ? nil : error);
