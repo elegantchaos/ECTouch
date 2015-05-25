@@ -1,14 +1,15 @@
 // --------------------------------------------------------------------------
-//! @author Sam Deane
-//! @date 12/12/2011
-//
-//  Copyright 2013 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2015 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
 #import "ECTModelController.h"
 #import "ECTAppDelegate.h"
+
+@interface ECTModelController()
+@property (strong, nonatomic, readwrite) ECModelControllerStartupCallbackBlock startupBlock;
+@end
 
 @implementation ECTModelController
 
@@ -20,9 +21,9 @@ ECDefineDebugChannel(ModelChannel);
     return app.model;
 }
 
-
-- (void)startup
+- (void)startupWithCallback:(ECModelControllerStartupCallbackBlock)callback
 {
+    self.startupBlock = callback;
 	ECDebug(ModelChannel, @"model startup");
 }
 

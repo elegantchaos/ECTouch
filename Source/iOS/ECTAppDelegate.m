@@ -1,8 +1,5 @@
 // --------------------------------------------------------------------------
-//! @author Sam Deane
-//! @date 12/12/2011
-//
-//  Copyright 2013 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2015 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
@@ -51,7 +48,11 @@ ECDefineDebugChannel(ApplicationChannel);
 
 	ECTModelController* nm = [self newModelController];
 	self.model = nm;
-	[nm startup];
+	[nm startupWithCallback:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideSplash];
+        });
+    }];
 	[nm load];
 
 	UIViewController* nrvc = [self newRootViewController];
@@ -175,7 +176,6 @@ ECDefineDebugChannel(ApplicationChannel);
 		iv.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		iv.contentMode = UIViewContentModeCenter;
 		[self.window.rootViewController.view addSubview:iv];
-		[self performSelector:@selector(hideSplash) withObject:nil afterDelay:0.0];
 		self.splash = iv;
 	}
 }

@@ -1,9 +1,6 @@
 // --------------------------------------------------------------------------
-//! @author Sam Deane
-//! @date 12/12/2011
-//
-//  Copyright 2013 Sam Deane, Elegant Chaos. All rights reserved.
-//  This source code is distributed under the terms of Elegant Chaos's 
+//  Copyright 2015 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
@@ -15,15 +12,16 @@
 
 @property (strong, nonatomic) NSManagedObjectModel* managedObjectModel;
 @property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext* privateContext;
 @property (strong, nonatomic) NSPersistentStoreCoordinator* persistentStoreCoordinator;
 
 @end
 
 @implementation ECTCoreDataModelController
 
-- (void)startup
+- (void)startupWithCallback:(ECModelControllerStartupCallbackBlock)callback
 {
-	[super startup];
+	[super startupWithCallback:callback];
 	[self startupCoreData];
 }
 
@@ -38,27 +36,39 @@
 
 - (void)startupCoreData
 {
-    self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    NSManagedObjectModel* mom = [NSManagedObjectModel mergedModelFromBundles:nil];
     
 	NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 	NSString* name = [info objectForKey:@"ECCoreDataName"];
 	NSString* version = [info objectForKey:@"ECCoreDataVersion"];
 	
-    NSURL* url = [[NSFileManager defaultManager] URLForApplicationDataPath:@"data"];
-    url = [url URLByAppendingPathComponent:[NSString stringWithFormat:@"%@-v%@.sqllite", name, version]];
+    NSPersistentStoreCoordinator* psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+    NSManagedObjectContext* moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    NSManagedObjectContext* poc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [poc setPersistentStoreCoordinator:psc];
+    moc.parentContext = poc;
 
-	NSError *error = nil;
-    NSPersistentStoreCoordinator* psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-							 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-							 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-	if ([psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:options error:&error])
-    {
-        NSManagedObjectContext* moc = [[NSManagedObjectContext alloc] init];
-        [moc setPersistentStoreCoordinator:psc];
-        self.persistentStoreCoordinator = psc;
-        self.managedObjectContext = moc;
-    }
+    self.persistentStoreCoordinator = psc;
+    self.managedObjectContext = moc;
+    self.privateContext = poc;
+    self.managedObjectModel = mom;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSDictionary *options = @{
+                                  NSMigratePersistentStoresAutomaticallyOption : @YES,
+                                  NSInferMappingModelAutomaticallyOption : @YES,
+                                  NSSQLitePragmasOption : @{ @"journal_mode" : @"DELETE" }
+                                  };
+        NSError *error = nil;
+        NSURL* dataURL = [[NSFileManager defaultManager] URLForApplicationDataPath:@"data"];
+        NSURL* storeUrl = [dataURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@-v%@.sqllite", name, version]];
+        if ([psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error])
+        {
+            ECModelControllerStartupCallbackBlock startupCallback = self.startupBlock;
+            if (startupCallback)
+                startupCallback();
+        }
+    });
 }
 
 - (void)shutdownCoreData
@@ -196,15 +206,38 @@
 	[self save];
 }
 
+- (id)insertEntityForName:(NSString *)name
+{
+    id entity = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:self.managedObjectContext];
+    return entity;
+}
+
 - (void)save
 {
-	NSError* error = nil;
-	if (![self.managedObjectContext save:&error])
-	{
-		NSLog(@"error %@", error);
-		
-		[ECErrorReporter reportError:error message:@"couldn't save model"];
-	}
+    NSManagedObjectContext* moc = self.managedObjectContext;
+    NSManagedObjectContext* poc = self.privateContext;
+    if (poc.hasChanges || moc.hasChanges)
+    {
+        [moc performBlockAndWait:^{
+            NSError* mocError = nil;
+            if (![moc save:&mocError])
+            {
+                NSLog(@"error %@", mocError);
+                [ECErrorReporter reportError:mocError message:@"couldn't save main context"];
+            }
+            else
+            {
+                [poc performBlock:^{
+                    NSError* pocError = nil;
+                    if (![poc save:&pocError])
+                    {
+                        NSLog(@"error %@", pocError);
+                        [ECErrorReporter reportError:pocError message:@"couldn't save private context"];
+                    }
+                }];
+            }
+        }];
+    }
 }
 
 @end
