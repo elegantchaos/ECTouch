@@ -48,7 +48,7 @@ ECDefineDebugChannel(ApplicationChannel);
 
 	ECTModelController* nm = [self newModelController];
 	self.model = nm;
-	[nm startupWithCallback:^{
+	[nm startupWithCallback:^(NSError* error){
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideSplash];
         });

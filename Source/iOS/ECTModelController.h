@@ -6,7 +6,7 @@
 
 ECDeclareDebugChannel(ModelChannel);
 
-typedef void (^ECModelControllerStartupCallbackBlock)(void);
+typedef void (^ECModelControllerStartupCallbackBlock)(NSError* error);
 
 @interface ECTModelController : NSObject
 
