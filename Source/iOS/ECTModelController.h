@@ -7,6 +7,7 @@
 ECDeclareDebugChannel(ModelChannel);
 
 typedef void (^ECModelControllerStartupCallbackBlock)(NSError* error);
+typedef void (^ECModelControllerSaveCallbackBlock)(NSError* error);
 
 @interface ECTModelController : NSObject
 
@@ -18,6 +19,6 @@ typedef void (^ECModelControllerStartupCallbackBlock)(NSError* error);
 - (void)startupWithCallback:(ECModelControllerStartupCallbackBlock)callback;
 - (void)shutdown;
 - (void)load;
-- (void)save;
+- (void)saveWithCallback:(ECModelControllerSaveCallbackBlock)callback;
 
 @end

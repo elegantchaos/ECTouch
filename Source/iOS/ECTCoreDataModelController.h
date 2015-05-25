@@ -19,7 +19,7 @@
 - (void)startupCoreData;
 - (void)shutdownCoreData;
 
-- (void)save;
+- (void)saveWithCallback:(ECModelControllerSaveCallbackBlock)callback;
 
 - (id)findEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value;
 - (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound;

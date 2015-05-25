@@ -200,7 +200,7 @@
 		[ECErrorReporter reportError:error message:@"couldn't delete all %@ entities", entityName];
 	}
 
-	[self save];
+	[self saveWithCallback:nil];
 }
 
 - (id)insertEntityForName:(NSString*)name
@@ -209,32 +209,43 @@
 	return entity;
 }
 
-- (void)save
+- (void)saveWithCallback:(ECModelControllerSaveCallbackBlock)callback
 {
+    if (!callback)
+        callback = ^(NSError* error) {};
+    
 	NSManagedObjectContext* moc = self.managedObjectContext;
 	NSManagedObjectContext* poc = self.privateContext;
+    __block NSError* error = nil;
 	if (poc.hasChanges || moc.hasChanges)
-	{
-		[moc performBlockAndWait:^{
-			NSError* mocError = nil;
-			if (![moc save:&mocError])
-			{
-				NSLog(@"error %@", mocError);
-				[ECErrorReporter reportError:mocError message:@"couldn't save main context"];
-			}
-			else
-			{
-				[poc performBlock:^{
-					NSError* pocError = nil;
-					if (![poc save:&pocError])
-					{
-						NSLog(@"error %@", pocError);
-						[ECErrorReporter reportError:pocError message:@"couldn't save private context"];
-					}
-				}];
-			}
-		}];
-	}
+    {
+        [moc performBlockAndWait:^{
+            if (![moc save:&error])
+            {
+                NSLog(@"error %@", error);
+                [ECErrorReporter reportError:error message:@"couldn't save main context"];
+                callback(error);
+            }
+            else
+            {
+                [poc performBlock:^{
+                    if (![poc save:&error])
+                    {
+                        NSLog(@"error %@", error);
+                        [ECErrorReporter reportError:error message:@"couldn't save private context"];
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        callback(error);
+                    });
+                }];
+            }
+        }];
+    }
+    else
+    {
+        callback(nil);
+    }
 }
 
 @end

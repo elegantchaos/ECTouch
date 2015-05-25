@@ -37,7 +37,7 @@ ECDefineDebugChannel(ModelChannel);
 	ECDebug(ModelChannel, @"model load");
 }
 
-- (void)save
+- (void)saveWithCallback:(ECModelControllerSaveCallbackBlock)callback
 {
 	ECDebug(ModelChannel, @"model save");
 }

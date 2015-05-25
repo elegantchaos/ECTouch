@@ -73,6 +73,7 @@ ECDefineDebugChannel(ApplicationChannel);
 - (void)applicationWillResignActive:(UIApplication *)application 
 {
     ECDebug(ApplicationChannel, @"will resign active");
+    [self saveModel];
 }
 
 // --------------------------------------------------------------------------
@@ -100,9 +101,7 @@ ECDefineDebugChannel(ApplicationChannel);
 -(void) applicationDidEnterBackground:(UIApplication*)application 
 {
     ECDebug(ApplicationChannel, @"did enter background");
-
-	[self.model save];
-    [[ECLogManager sharedInstance] saveChannelSettings];
+    [self saveModel];
 }
 
 // --------------------------------------------------------------------------
@@ -122,8 +121,10 @@ ECDefineDebugChannel(ApplicationChannel);
 {
     ECDebug(ApplicationChannel, @"will terminate");
     
-	[self.model shutdown];
-    [self shutdownLogging];
+    [self.model saveWithCallback:^(NSError *error) {
+        [self.model shutdown];
+        [self shutdownLogging];
+    }];
 }
 
 
@@ -163,6 +164,17 @@ ECDefineDebugChannel(ApplicationChannel);
 	ECAssertShouldntBeHere();
 	
 	return nil;
+}
+
+- (void)saveModel
+{
+    [self.model saveWithCallback:^(NSError *error) {
+        if (error)
+        {
+            ECDebug(ApplicationChannel, @"error saving model %@", error);
+        }
+    }];
+    [[ECLogManager sharedInstance] saveChannelSettings];
 }
 
 #pragma mark - Splash Screen
