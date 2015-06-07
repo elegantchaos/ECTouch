@@ -18,4 +18,6 @@
 - (id)newModelController;
 - (UIViewController*)newRootViewController;
 
+- (NSString*)backgroundImageNameWithBaseName:(NSString*)base;
+
 @end

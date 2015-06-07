@@ -136,8 +136,9 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (void)shutdownLogging
 {
-    [[ECLogManager sharedInstance] saveChannelSettings];
-    [[ECLogManager sharedInstance] shutdown];
+    ECLogManager* logManager = [ECLogManager sharedInstance];
+    [logManager saveChannelSettings];
+    [logManager shutdown];
 }
 
 #pragma mark - To Be Overridden
@@ -179,19 +180,26 @@ ECDefineDebugChannel(ApplicationChannel);
 
 #pragma mark - Splash Screen
 
-- (void)showSplash
+- (NSString*)backgroundImageNameWithBaseName:(NSString*)base
 {
     NSString* name;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     if (height > 480)
     {
-        name = [NSString stringWithFormat:@"Default-%ld.png", (long) height];
+        name = [NSString stringWithFormat:@"%@-%ldh", base, (long) height];
     }
     else
     {
-        name = @"Default.png";
+        name = base;
     }
-    ECDebug(ApplicationChannel, @"splash height %lf, scale %lf", height, [UIScreen mainScreen].scale);
+    ECDebug(ApplicationChannel, @"background %@ height %lf, scale %lf, name %@", base, height, [UIScreen mainScreen].scale, name);
+    
+    return [name stringByAppendingPathExtension:@"png"];;
+}
+
+- (void)showSplash
+{
+    NSString* name = [self backgroundImageNameWithBaseName:@"Default"];
     UIImage* image = [UIImage imageNamed:name];
 	if (image)
 	{
