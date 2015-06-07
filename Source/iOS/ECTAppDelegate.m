@@ -181,7 +181,18 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (void)showSplash
 {
-    UIImage* image = [UIImage imageNamed:@"Default.png"];
+    NSString* name;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    if (height > 480)
+    {
+        name = [NSString stringWithFormat:@"Default-%ld.png", (long) height];
+    }
+    else
+    {
+        name = @"Default.png";
+    }
+    NSLog(@"height %lf", height);
+    UIImage* image = [UIImage imageNamed:name];
 	if (image)
 	{
 		UIImageView* iv = [[UIImageView alloc] initWithImage:image];
