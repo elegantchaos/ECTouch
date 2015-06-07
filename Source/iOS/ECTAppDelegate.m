@@ -191,7 +191,7 @@ ECDefineDebugChannel(ApplicationChannel);
     {
         name = @"Default.png";
     }
-    NSLog(@"height %lf", height);
+    ECDebug(ApplicationChannel, @"splash height %lf, scale %lf", height, [UIScreen mainScreen].scale);
     UIImage* image = [UIImage imageNamed:name];
 	if (image)
 	{
