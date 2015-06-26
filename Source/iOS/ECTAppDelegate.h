@@ -17,6 +17,7 @@
 
 - (id)newModelController;
 - (UIViewController*)newRootViewController;
+- (void)application:(UIApplication *)application didFinishSettingUpModel:(ECTModelController*)model;
 
 - (NSString*)backgroundImageNameWithBaseName:(NSString*)base;
 

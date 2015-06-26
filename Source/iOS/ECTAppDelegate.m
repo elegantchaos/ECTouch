@@ -50,6 +50,7 @@ ECDefineDebugChannel(ApplicationChannel);
 	self.model = nm;
 	[nm startupWithCallback:^(NSError* error){
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self application:application didFinishSettingUpModel:nm];
             [self hideSplash];
         });
     }];
@@ -64,6 +65,11 @@ ECDefineDebugChannel(ApplicationChannel);
 	[self showSplash];
 	
 	return YES;
+}
+
+- (void)application:(UIApplication *)application didFinishSettingUpModel:(ECTModelController*)model
+{
+    ECDebug(ApplicationChannel, @"model is set up");
 }
 
 // --------------------------------------------------------------------------
