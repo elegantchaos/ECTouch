@@ -17,8 +17,9 @@
 
 - (id)newModelController;
 - (UIViewController*)newRootViewController;
-- (void)application:(UIApplication *)application didFinishSettingUpModel:(ECTModelController*)model;
-
+- (BOOL)application:(UIApplication *)application didFinishSettingUpModel:(ECTModelController*)model;
+- (BOOL)splashShowing;
+- (void)hideSplash;
 - (NSString*)backgroundImageNameWithBaseName:(NSString*)base;
 
 @end

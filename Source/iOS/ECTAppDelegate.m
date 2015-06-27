@@ -50,8 +50,10 @@ ECDefineDebugChannel(ApplicationChannel);
 	self.model = nm;
 	[nm startupWithCallback:^(NSError* error){
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self application:application didFinishSettingUpModel:nm];
-            [self hideSplash];
+            if ([self application:application didFinishSettingUpModel:nm])
+            {
+                [self hideSplash];
+            }
         });
     }];
 	[nm load];
@@ -67,9 +69,10 @@ ECDefineDebugChannel(ApplicationChannel);
 	return YES;
 }
 
-- (void)application:(UIApplication *)application didFinishSettingUpModel:(ECTModelController*)model
+- (BOOL)application:(UIApplication *)application didFinishSettingUpModel:(ECTModelController*)model
 {
     ECDebug(ApplicationChannel, @"model is set up");
+    return YES;
 }
 
 // --------------------------------------------------------------------------
@@ -203,6 +206,11 @@ ECDefineDebugChannel(ApplicationChannel);
     return [name stringByAppendingPathExtension:@"png"];;
 }
 
+- (BOOL)splashShowing
+{
+    return self.splash != nil;
+}
+
 - (void)showSplash
 {
     NSString* name = [self backgroundImageNameWithBaseName:@"Default"];
@@ -212,7 +220,9 @@ ECDefineDebugChannel(ApplicationChannel);
 		UIImageView* iv = [[UIImageView alloc] initWithImage:image];
 		iv.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		iv.contentMode = UIViewContentModeCenter;
-		[self.window.rootViewController.view addSubview:iv];
+        UIView* rootView = self.window.rootViewController.view;
+        iv.frame = CGRectMake(0, -rootView.frame.origin.y, image.size.width, image.size.height);
+		[rootView addSubview:iv];
 		self.splash = iv;
 	}
 }
@@ -223,7 +233,9 @@ ECDefineDebugChannel(ApplicationChannel);
 	[UIView animateWithDuration:1.0 animations:^
 	{
 		splash.alpha = 0.0;
-	}];
+	} completion:^(BOOL finished) {
+        [self hiddenSplash];
+    }];
     self.splash = nil;
 }
 
