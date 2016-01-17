@@ -612,7 +612,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Elegant Chaos";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECTouch" */;
@@ -749,6 +749,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA4315DBCD3900F2FE40 /* IOSDebug.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elegantchaos.${PRODUCT_NAME:rfc1034identifier}";
 			};
 			name = Debug;
 		};
@@ -756,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2251BA4415DBCD3900F2FE40 /* IOSRelease.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elegantchaos.${PRODUCT_NAME:rfc1034identifier}";
 			};
 			name = Release;
 		};
@@ -764,6 +766,7 @@
 			baseConfigurationReference = 2251BA5C15DBD68500F2FE40 /* IOSUnitTestDebug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Resources/ECTouchTests.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elegantchaos.${PRODUCT_NAME:rfc1034identifier}";
 			};
 			name = Debug;
 		};
@@ -772,6 +775,7 @@
 			baseConfigurationReference = 2251BA5D15DBD68500F2FE40 /* IOSUnitTestRelease.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Resources/ECTouchTests.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elegantchaos.${PRODUCT_NAME:rfc1034identifier}";
 			};
 			name = Release;
 		};
